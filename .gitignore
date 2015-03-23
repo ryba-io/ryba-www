@@ -1,0 +1,9 @@
+.*
+/node_modules
+/out
+/public/vendors
+*.iml
+src/files/vendor/components-bootstrap
+src/files/vendor/jquery
+.docpad.db
+!.gitignore

@@ -1,0 +1,92 @@
+doctype html    
+html
+  head
+    meta(charset='utf-8')
+    title HDFS Web UI
+    link(rel='icon', type='image/vnd.microsoft.icon', href='favicon.ico')
+    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='./fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
+    link(rel='stylesheet', type='text/css', href='./fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
+    link(rel='stylesheet', type='text/css', href='./vendors/semantic-ui/dist/semantic.min.css')
+    link(rel='stylesheet', type='text/css', href='./css/ryba.css')
+    //- meta(name="viewport", content="width=device-width, initial-scale=1")
+    script(type='text/javascript', src='vendors/jquery/dist/jquery.min.js')
+    script(type='text/javascript', src='vendors/semantic-ui/dist/semantic.min.js')
+    script(type='text/javascript', src='js/ryba.js')
+    //- script(type='text/javascript', src='vendors/bootstrap/js/bootstrap.min.js')
+
+    script
+      :coffeescript
+        $().ready ->
+          console.log 'ready'
+  body#ryba.pushable
+    //- #toc.ui.left.vertical.inverted.labeled.icon.sidebar.menu
+    #toc.ui.left.vertical.inverted.sidebar.menu.uncover //.visible
+      .ui.right.aligned.search.item
+        .ui.icon.input
+          input.prompt(placeholder="Filter...", type="text")
+          i.search.icon
+        .results
+      a.item
+        i.home.icon
+        span.text Home
+    //- .ui.black.big.launch.right.attached.fixed.button
+    #launch.ui.attached.right.black.fixed.button
+      i.content.icon
+      span.text Menu
+    #header.ui.top.fixed.inverted.main.borderless.menu
+      .header.container
+        .item.logo
+          img(src='./img/logo.png')
+        .item.intro
+          p Ryba - deploy multi-tenant Hadoop Clusters
+          span.ui.label.large
+            i.student.icon
+            | Documentation
+          span.ui.label.large
+            i.list.icon
+            | Modules
+          span.ui.label.large
+            i.github.icon
+            | Source Code
+    .pusher
+      .full.height
+        .main.container
+          .ui.header HDFS NameNode
+          .ui.divider
+          .ui.page.grid
+            .eight.wide.column
+              p 'test1'
+              p 'test2'
+              p 'test3'
+              p 'test4'
+              p 'test5'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+              p 'test'
+            .eight.wide.column 
+              p 'testa'
+              p 'testb'
+              p 'testc'
+              p 'test4'
+              p 'test5'
+
+  
+

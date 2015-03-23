@@ -1,0 +1,70 @@
+doctype html    
+html
+  head
+    meta(charset='utf-8')
+    title HDFS Web UI
+    link(rel='icon', type='image/vnd.microsoft.icon', href='favicon.ico')
+    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
+    link(rel='stylesheet', type='text/css', href='/vendors/semantic-ui/dist/semantic.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/default.css')
+    //- link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/solarized_dark.css')
+    //- link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/zenburn.css')
+    link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/github.css')
+    link(rel='stylesheet', type='text/css', href='/css/ryba.css')
+    //- meta(name="viewport", content="width=device-width, initial-scale=1")
+    script(type='text/javascript', src='/vendors/highlightjs/highlight.pack.js')
+    script(type='text/javascript', src='/vendors/jquery/dist/jquery.min.js')
+    script(type='text/javascript', src='/vendors/semantic-ui/dist/semantic.min.js')
+
+    script
+      :coffeescript
+        $().ready ->
+          $('.dropdown').dropdown
+            transition: 'drop'
+  body#ryba
+    #header.ui.top.fixed.inverted.main.borderless.menu
+      .header.container
+        .item.logo
+          img(src='/img/logo.png')
+        .item.intro
+          p Ryba - deploy multi-tenant Hadoop Clusters
+          span.ui.label.large
+            i.student.icon
+            | Documentation
+          span.ui.label.large
+            i.list.icon
+            | Modules
+          span.ui.label.large
+            i.github.icon
+            | Source Code
+    #content.pusher
+      .full.height
+        .main.title.segment
+          .container
+            .ui.sixteen.wide.column.grid
+              .ten.wide.column
+                .ui.horizontal.segment
+              .six.wide.column
+                .ui.horizontal.segment
+                  .commands
+                    .ui.selection.dropdown
+                      input(name="" type="hidden")
+                      .default.text Available Commands
+                      i.dropdown.icon
+                      .menu
+                        .item(data-value="backup")
+                          | Backup
+                          .ui.small.label ryba/hdfs/nn/backup
+                        .item(data-value="check") Check
+                        .item(data-value="install") Install
+                        .item(data-value="start") Start
+                        .item(data-value="start") Status
+                        .item(data-value="start") Stop
+                        .item(data-value="start") Wait
+        .main.content.container
+          | Page Content
+
+
+  

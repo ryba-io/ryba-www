@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+require('coffee-script/register');
+modules = require('../lib/modules');
+
+modules.modules({}, function(err, modules){
+  // console.log(modules);
+});

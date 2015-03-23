@@ -1,0 +1,118 @@
+doctype html    
+html
+  head
+    meta(charset='utf-8')
+    title HDFS Web UI
+    link(rel='icon', type='image/vnd.microsoft.icon', href='favicon.ico')
+    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
+    link(rel='stylesheet', type='text/css', href='/vendors/semantic-ui/dist/semantic.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/default.css')
+    //- link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/solarized_dark.css')
+    //- link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/zenburn.css')
+    link(rel='stylesheet', type='text/css', href='/vendors/highlightjs/styles/github.css')
+    link(rel='stylesheet', type='text/css', href='/css/ryba.css')
+    //- meta(name="viewport", content="width=device-width, initial-scale=1")
+    script(type='text/javascript', src='/vendors/highlightjs/highlight.pack.js')
+    script(type='text/javascript', src='/vendors/jquery/dist/jquery.min.js')
+    script(type='text/javascript', src='/vendors/semantic-ui/dist/semantic.min.js')
+    //- script(type='text/javascript', src='/vendors/react/react.min.js')
+    script(type='text/javascript', src='/vendors/react/react.js')
+    script(type='text/javascript', src='/vendors/react/JSXTransformer.js')
+    script(type="text/jsx", src="/js/Toc.js")
+    script(type="text/jsx", src="/js/Commands.js")
+    script(type='text/jsx', src='/js/ryba.js')
+    //- script(type='text/javascript', src='vendors/bootstrap/js/bootstrap.min.js')
+
+    script
+      :coffeescript
+        $().ready ->
+          console.log 'ready'
+  body#ryba.pushable
+    .toc
+    #launch.ui.attached.right.black.fixed.button
+      i.content.icon
+      span.text Menu
+    #header.ui.top.fixed.inverted.main.borderless.menu
+      .header.container
+        .item.logo
+          img(src='/img/logo.png')
+        .item.intro
+          p Ryba - deploy multi-tenant Hadoop Clusters
+          span.ui.label.large
+            i.student.icon
+            | Documentation
+          span.ui.label.large
+            i.list.icon
+            | Modules
+          span.ui.label.large
+            i.github.icon
+            | Source Code
+    #content.pusher
+      .full.height
+        .main.title.segment
+          .container
+            .ui.sixteen.wide.column.grid
+              .ten.wide.column
+                .ui.horizontal.segment
+              .six.wide.column
+                .ui.horizontal.segment
+                  .commands
+        .main.content.container
+          .ui.close.right.rail
+            .ui.sticky.fixed.top
+              .ui.secondary.vertical.following.fluid.accordion.menu
+                .item
+                  a.title
+                    i.dropdown.icon(tabindex=0)
+                    b ryba/hbase/regionserver
+                //-   //- .content.menu
+                //-   //-     a.item(href="") HBase RegionServer
+                //-   //-     a.item(href="") Configuration
+                //-   //-     a.item(href="") Configuration for HDFS High Availability (HA)
+                .item
+                  a.active.title
+                    i.dropdown.icon(tabindex=0)
+                    b ryba/hbase/regionserver/install
+                  .active.content.menu
+                      //- a.item(href="") HBase RegionServer Install
+                      a.item(href="#iptables") IPTables
+                      a.item(href="#service") Service
+                      a.item(href="#zookeeper-jaas") Zookeeper JAAS
+                      a.item(href="#configure") Configure
+                      a.item(href="#opts") Opts
+                      a.item(href="#metrics") Metrics
+                      a.item(href="#spnego") SPNEGO
+                      a.item(href="#start") Start
+                      a.item(href="#check") Check
+          != srcmd
+      .ui.inverted.black.footer.vertical.segment
+        .container
+          .ui.stackable.inverted.divided.relaxed.grid
+            .four.wide.column
+              h4.ui.teal.inverted.header Getting Started
+              .ui.inverted.link.list
+                a.item(href="#") 15 minutes introduction
+                a.item(href="#") Getting Started
+                a.item(href="#") Developement Environnemt
+                a.item(href="#") Become a power user
+            .four.wide.column
+              h4.ui.teal.inverted.header Contribute
+              .ui.inverted.link.list
+                a.item(href="#") GitHub
+                a.item(href="#") Issue Tracker
+                a.item(href="#") License
+                a.item(href="#") Contact
+            .eight.wide.column
+              h3.ui.inverted.header Suggestions, problems, feedback?
+              p
+              | Deploying Hadoop in a secured multi-tenant mode take a lot of
+              | effort. Support this community effort with your contribution.
+              | Review the documentation, test Ryba in multiple environments
+              | or sponsor new features.
+              form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
+                button.ui.teal.button(type='submit') Donate Today
+
+
+  

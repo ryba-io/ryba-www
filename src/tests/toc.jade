@@ -1,0 +1,85 @@
+doctype html    
+html
+  head
+    meta(charset='utf-8')
+    title HDFS Web UI
+    link(rel='icon', type='image/vnd.microsoft.icon', href='favicon.ico')
+    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
+    link(rel='stylesheet', type='text/css', href='/vendors/semantic-ui/dist/semantic.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/ryba.css')
+    //- meta(name="viewport", content="width=device-width, initial-scale=1")
+    script(type='text/javascript', src='/vendors/jquery/dist/jquery.min.js')
+    script(type='text/javascript', src='/vendors/semantic-ui/dist/semantic.min.js')
+    script(type='text/javascript', src='/vendors/react/react.js')
+    script(type='text/javascript', src='/vendors/react/JSXTransformer.js')
+    //- script(type="text/jsx", src="/js/Toc.js")
+    //- script(type='text/javascript', src='/js/ryba.js')
+    script
+      :coffeescript
+        $().ready ->
+          $tok = $('.toc')
+          $('#launch').click ->
+            $tok.sidebar('toggle')
+
+  body#ryba.pushable
+    .toc.ui.left.vertical.inverted.sidebar.menu.uncover //.visible
+      .ui.fluid.search.loading.item
+        .ui.icon.input
+          input.prompt(placeholder="Filter...", type="text")
+          i.search.icon
+        .results
+      a.item
+        i.home.icon
+        span.text Home
+      div.item
+        i.home.icon
+        span.text ryba/falcon
+        div.modules.menu
+          div.item
+            a.ui.small.inverted.header Falcon
+          div.item
+            a.ui.small.inverted.header Falcon Check
+          div.item
+            a.ui.small.inverted.header Falcon Install
+          div.item
+            a.ui.small.inverted.header Falcon Start
+          div.item
+            a.ui.small.inverted.header Falcon Status
+          div.item
+            a.ui.small.inverted.header Falcon Stop
+      div.item
+        i.home.icon
+        span.text ryba/ganglia/collector
+        div.modules.menu
+          div.item
+            a.ui.small.inverted.header Ganglia Collector
+          div.item
+            a.ui.small.inverted.header Ganglia Collector Install
+          div.item
+            a.ui.small.inverted.header Ganglia Collector Start
+          div.item
+            a.ui.small.inverted.header Ganglia Collector Stop
+      div.item
+        i.home.icon
+        span.text ryba/ganglia/monitor
+        div.modules.menu
+          div.item
+            a.ui.small.inverted.header Ganglia Monitor
+          div.item
+            a.ui.small.inverted.header Ganglia Monitor Install
+          div.item
+            a.ui.small.inverted.header Ganglia Monitor Start
+          div.item
+            a.ui.small.inverted.header Ganglia Monitor Stop
+      a.item
+        i.home.icon
+        span.text Ryba All Modules
+    #launch.ui.attached.right.black.fixed.button
+      i.content.icon
+      span.text Menu
+      
+
+
+  

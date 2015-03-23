@@ -1,0 +1,18 @@
+{
+  "name": "ryba-docs",
+  "dependencies": {
+    "components-bootstrap": "~3.1.1",
+    "highlightjs": "~8.4.0",
+    "react": "~0.13.0"
+  },
+  "preen": {
+    "components-bootstrap": [
+      "css/*.css",
+      "fonts/*",
+      "js/*.js"
+    ],
+    "jquery": [
+      "dist/*.js"
+    ]
+  }
+}
