@@ -2,6 +2,8 @@
 /node_modules
 /out
 /public/vendors
+/semantic
+/semantic.json
 *.iml
 src/files/vendor/components-bootstrap
 src/files/vendor/jquery

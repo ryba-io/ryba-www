@@ -1,7 +1,25 @@
-###* @jsx React.DOM ###
+
+require('semantic-ui/src/definitions/behaviors/visibility.js')
+require('semantic-ui/src/definitions/modules/accordion.js')
+require('semantic-ui/src/definitions/modules/dropdown.js')
+require('semantic-ui/src/definitions/modules/search.js')
+require('semantic-ui/src/definitions/modules/sidebar.js')
+require('semantic-ui/src/definitions/modules/sticky.js')
+require('semantic-ui/src/definitions/modules/transition.js')
+# require('semantic-ui/src/definitions/modules/accordion.less');
+# console.log require('imports?jQuery=jquery!../vendors/semantic-ui/dist/semantic.js')
+# require('../vendors/semantic-ui/dist/semantic.js')
+$ = require('jquery')
+React = require('react')
+Commands = require('./Commands.cjsx')
+Toc = require('./Toc.cjsx')
+require('./content.coffee')
+
+if module.hot
+  module.hot.accept ->
+    console.log 'hot swap 7'
 
 $().ready ->
-  
   $content = $('.main.content.container')
   $section_headers = $content.children('h2')
   $follow_menu = $('#content .following.menu')
@@ -10,24 +28,9 @@ $().ready ->
     $tok = $('.left')
     $tok.sidebar('toggle')
 
-  content = [
-    { title: 'Horse', description: 'An Animal' }
-    { title: 'Cow', description: 'Another Animal' }
-  ]
 
-  $('pre code[class^="language-"]')
-  .each (i, block) ->
-     hljs.highlightBlock block
-  $('pre code:not([class]), pre code[class=""]')
-  .parent()
-  .wrap( "<div class='ui styled fluid accordion'></div>" )
-  .before('<div class="title"><i class="dropdown icon"></i>Show Source Code</div>')
-  .children('code')
-  .each (i, block) ->
-     hljs.highlightBlock block
-     $(@).parent().toggle()
-
-  $section_headers 
+  
+  $section_headers
   .each (i, block) ->
     $h2 = $(@)
     text = $h2.text().replace(' ', '-').toLowerCase()
@@ -81,7 +84,6 @@ $().ready ->
 
   $content.children('h1').addClass('ui header').appendTo($title_container.eq 0)
 
-  $('.ui.accordion').accordion()
   $sticky = $('.ui.sticky')
   $sticky.sticky
     # context: '#content .ui.page'
@@ -93,37 +95,11 @@ $().ready ->
   
   
   $.getJSON '/modules.json', (data) ->
-    React.render `<Toc data={data.by_name} />`, $('.toc').get(0)
+    React.render <Toc data={data.by_name} />, $('.toc').get(0)
     name = /\/module\/(.*?)(\.html|\/*)$/.exec(window.location.pathname)?[1]
+    console.log name
     return unless name
-    React.render `<Commands commands={data.commands} name={name} />`, $('.commands').get(0)
-    # 
-    # $('.dropdown').dropdown
-    #   transition: 'drop'
-
-  # $.getJSON '/modules.json', (data) ->
-  #   items = []
-  #   registered = []
-  #   for service, commands of data.services
-  #     registered.push service
-  #     module = data.by_name[service]
-  #     items.push '<div class="item">'
-  #     items.push '<div class="ui small inverted header">'
-  #     items.push module.title
-  #     items.push '</div>'
-  #     items.push '<div class="menu">'
-  #     modules = {}
-  #     for command, mods of commands
-  #       modules[mod] = true for mod in mods
-  #       
-  #     for module of modules
-  #       module = data.by_name[module]
-  #       items.push '<a class="item" href="">'
-  #       items.push module.title
-  #       items.push '</a>'
-  #     items.push '</div>'
-  #     items.push '</div>'
-  #   $('.modules').html items.join ''
+    React.render <Commands commands={data.commands} name={name} />, $('.commands').get(0)
 
   $search = $('.ui.search')
   $search_items = $('.toc div.item')

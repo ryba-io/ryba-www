@@ -9,9 +9,9 @@ module.exports = parameters
   ,
     name: 'port', shortcut: 'p'
     description: 'Server port'
-  ,
-    name: 'public', shortcut: 'd'
-    description: 'Directory storing files to serve'
-    required: true
+  # ,
+  #   name: 'public', shortcut: 'd'
+  #   description: 'Directory storing files to serve'
+  #   required: true
   ]
 

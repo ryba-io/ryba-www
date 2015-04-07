@@ -1,4 +1,5 @@
-###* @jsx React.DOM ###
+
+React = require 'react'
 
 hash = (s) ->
   s.split("").reduce (a,b) ->
@@ -12,21 +13,21 @@ gkeys = {}
 ModuleItem = React.createClass
   render: ->
     url = "/module/#{@props.module.name}.html"
-    `<div className="item">
+    <div className="item">
       <a href={url} className="ui inverted small header">{this.props.module.title}</a>
-    </div>`
+    </div>
 
 ModuleGroup = React.createClass
   render: ->
     items = for module in @props.group.modules
-      `<ModuleItem key={module.name} module={module} />`
-    `<div className="item">
+      <ModuleItem key={module.name} module={module} />
+    <div className="item">
       <i className="home icon" />
       <a href="" className="ui small inverted header">{this.props.group.name}</a>
       <div className="modules menu">
       {items}
       </div>
-    </div>`
+    </div>
 
 Toc = React.createClass
   render: ->
@@ -38,8 +39,8 @@ Toc = React.createClass
     groups = for name, modules of groups
       continue if modules.length is 0
       group = name: name, modules: modules
-      `<ModuleGroup key={group.name} group={group} />`
-    `<div className="toc ui left vertical inverted sidebar menu uncover">
+      <ModuleGroup key={group.name} group={group} />
+    <div className="toc ui left vertical inverted sidebar menu uncover">
       <div className="ui fluid search loading item">
         <div className="ui icon input">
           <input className="prompt" placeholder="Filter..." type="text" />
@@ -48,13 +49,6 @@ Toc = React.createClass
       </div>
       <a className="item"><i className="home icon" /><span className="text">Home</span></a>
       {groups}
-    </div>`
-# 
-# $.getJSON '/modules.json', (data) ->
-#   toc = React.render `<Toc data={data.by_name} />`, $('.toc').get(0)
-
-# data = [
-#   { title: 'Masson Bootstrap' }
-#   { title: 'Masson Core' }
-# ]
-# toc = React.render `<Toc data={data} />`, $('#tocker').get(0)
+    </div>
+  
+module.exports = Toc
