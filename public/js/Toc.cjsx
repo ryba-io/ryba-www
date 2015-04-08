@@ -1,4 +1,5 @@
 
+require '../css/toc.styl'
 React = require 'react'
 
 hash = (s) ->

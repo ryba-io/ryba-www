@@ -1,5 +1,8 @@
 
 $ = require('jquery')
+require 'highlight.js/styles/default.css'
+require 'highlight.js/styles/github.css'
+hljs = require 'highlight.js'
 require('semantic-ui/src/definitions/modules/accordion.js')
 
 $ ->
@@ -23,7 +26,7 @@ $ ->
   .wrap( "<div class='active content'></div>" )
   .children('code')
   .each (i, block) ->
-    console.log 'hightlight code'
+    console.log 'hightlight code', hljs
     hljs.highlightBlock block
     $(@).closest('.ui.accordion').accordion()
 
