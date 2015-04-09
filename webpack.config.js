@@ -24,6 +24,7 @@ module.exports = {
       { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.coffee$/, loader: 'coffee-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.cjsx$/, loader: 'coffee-jsx-loader' },
       { test: /\.jsx$/, loader: 'jsx-loader' },
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },

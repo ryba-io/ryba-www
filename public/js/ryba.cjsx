@@ -11,12 +11,13 @@ require('semantic-ui/src/definitions/modules/sticky.js')
 require('semantic-ui/src/definitions/modules/transition.js')
 # require('semantic-ui/src/definitions/modules/accordion.less');
 # console.log require('imports?jQuery=jquery!../vendors/semantic-ui/dist/semantic.js')
-# require('../vendors/semantic-ui/dist/semantic.js')
+# require('../node_modules/semantic-ui/dist/semantic.js')
 $ = require('jquery')
 React = require('react')
 Commands = require('./Commands.cjsx')
 Toc = require('./Toc.cjsx')
 require('./content.coffee')
+Documentation = require('./Documentation.cjsx')
 
 if module.hot
   module.hot.accept ->

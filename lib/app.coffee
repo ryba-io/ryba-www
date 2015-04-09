@@ -37,6 +37,8 @@ app.use cookieParser 'my secret'
 app.use methodOverride '_method'
 app.use session secret: 'my secret', resave: true, saveUninitialized: true
 
+
+
 modules = require './modules'
 app.use modules
 app.use stylus.middleware
@@ -74,6 +76,32 @@ app.get /module\/.*/, (req, res, next) ->
     return next err if err
     srcmd = md.render content
     res.render 'module.jade', title: 'Express', srcmd: srcmd
+
+app.use serve_static path.resolve __dirname, '../public'
+
+
+
+app.get /documentation\/.*$/, (req, res, next) ->
+  console.log "url#{req.url}"
+  filename = req.url.split('/')[2]
+  console.log "filename is #{filename}"
+  filename = filename + ".md" if filename.indexOf(".md") is -1
+  console.log "filename is #{filename}"
+  filename = "#{path.join __dirname, '/../public',filename}"
+  console.log "filename is #{filename}"
+  fs.readFile filename, 'utf8', (err, content) ->
+    return next err if err
+    try
+      html = md.render content
+      res.render 'documentation.jade',  title: 'Documentation', srcmd: html
+    catch err
+      fn err
+    return
+  return 
+
+app.get /documentation$/,  (req, res, next)  ->
+  res.render 'documentationIndex.jade', title: 'Getting Started'
+
 
 # app.get /.*/, (req, res, next) ->
 #   dirname = path.join params.public, path.dirname req.url
