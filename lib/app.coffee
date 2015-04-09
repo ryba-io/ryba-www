@@ -82,13 +82,9 @@ app.use serve_static path.resolve __dirname, '../public'
 
 
 app.get /documentation\/.*$/, (req, res, next) ->
-  console.log "url#{req.url}"
   filename = req.url.split('/')[2]
-  console.log "filename is #{filename}"
   filename = filename + ".md" if filename.indexOf(".md") is -1
-  console.log "filename is #{filename}"
   filename = "#{path.join __dirname, '/../public',filename}"
-  console.log "filename is #{filename}"
   fs.readFile filename, 'utf8', (err, content) ->
     return next err if err
     try

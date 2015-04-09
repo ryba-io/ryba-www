@@ -17,7 +17,7 @@ html
               img(src='/img/logo.png')
             .item.intro
               p Ryba - deploy multi-tenant Hadoop Clusters
-              a.ui.label.large(href="/documentation/")
+              a.ui.label.large(href="/documentation")
                 i.student.icon
                 | Documentation
               a.ui.label.large(href="")
@@ -30,25 +30,28 @@ html
             div.item
                 | Quick Start
                 div.menu
-                    a.item 
+                    a.item(href="/documentation/gettingStarted")
                       | Getting Started
-                    a.item
+                    a.item(href="/documentation/Motivation")
                       | Motivation
             div.item
                 | Guides
                 div.menu
-                    a.item
+                    a.item(href="/documentation/Tutorial")
                       | Tutorial
-                    a.item
+                    a.item(href="/documentation/FirstMiddleware")
                       | Your first Middleware
             div.item
                 | How To contribute
                 div.menu
-                    a.item
+                    a.item(href="/documentation/Github")
                       | Fork from Github
-                    a.item
+                    a.item(href="/documentation/SubmitMiddleware")
                       | Submit your Middleware
-    
-
+        .main.content.container
+              .ui.close.right.rail
+                .ui.sticky.fixed.top
+                  .ui.secondary.vertical.following.fluid.accordion.menu
+              != srcmd
                 
             
