@@ -71,17 +71,15 @@ app.get /module\/.*/, (req, res, next) ->
 
 app.use serve_static path.resolve __dirname, '../public'
 
-
-
-app.get /documentation\/.*$/, (req, res, next) ->
-  filename = req.url.split('/')[2]
-  filename = filename + ".md" if filename.indexOf(".md") is -1
-  filename = "#{path.join __dirname, '/../public',filename}"
+app.get '/documentation/:page', (req, res, next) ->
+  filename = req.params.page.split('/').slice(0)
+  filename = "#{filename}.md"
+  filename = "#{path.join __dirname, '/../public/documentation/docs/',filename}"
   fs.readFile filename, 'utf8', (err, content) ->
     return next err if err
     try
       html = md.render content
-      res.render 'documentation.jade',  title: 'Documentation', srcmd: html
+      res.render 'documentation/documentation.jade',  title: 'Documentation', srcmd: html
     catch err
       fn err
     return
@@ -96,9 +94,8 @@ app.get '/modules', (req, res) ->
     name: mod.name, title: mod.title, description: mod.description, index: mod.index or false
   res.render 'modules.jade', modules: modules
   
-
-app.get /documentation$/,  (req, res, next)  ->
-  res.render 'documentationIndex.jade', title: 'Getting Started'
+app.get '/documentation',  (req, res)  ->
+  res.render 'documentation/index.jade', title: 'Getting Started'
 
 
 # app.get /.*/, (req, res, next) ->

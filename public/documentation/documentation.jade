@@ -1,0 +1,62 @@
+doctype html    
+html
+  head
+    meta(charset='utf-8')
+    link(rel='icon', type='image/vnd.microsoft.icon', href='favicon.ico')
+    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
+    script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
+    script(type='text/javascript', src='http://localhost:8080/bundle.js')
+  body#ryba.pushable.reset-page    
+      div#leftMenu.ui.vertical.inverted.sidebar.menu.left
+        div.ui.search
+          div.ui.icon.input.fluid.item
+            input.prompt(placeholder="Search...",type="text")
+            i.search.icon
+        div.item
+            | Quick Start
+            div.menu
+                a.item(href="/documentation/ryba")
+                  | What is ryba
+                a.item(href="/documentation/start")
+                  | Getting Started
+        div.item
+            | Guides
+            div.menu
+                a.item(href="/documentation/Tutorial")
+                  | Tutorial
+                a.item(href="/documentation/FirstMiddleware")
+                  | Your first Middleware
+        div.item
+            | How To contribute
+            div.menu
+                a.item(href="/documentation/Github")
+                  | Fork from Github
+                a.item(href="/documentation/SubmitMiddleware")
+                  | Submit your Middleware
+      div#launch.ui.black.big.launch.right.attached.fixed.button
+          i.content.icon
+          span.text Menu
+      div#content.pusher
+        div#header.ui.fixed.inverted.main.borderless.menu
+          div
+            .header.container
+              .item.logo
+                img(src='/img/logo.png')
+              .item.intro
+                p Ryba - deploy multi-tenant Hadoop Clusters
+                a.ui.label.large(href="/documentation")
+                  i.student.icon
+                  | Documentation
+                a.ui.label.large(href="")
+                  i.list.icon
+                  | Modules
+                a.ui.label.large(href="https://github.com/ryba-io/ryba")
+                  i.github.icon
+                  | Source Code
+        div.full.height
+            div.main.title.segment
+              div.container
+                != srcmd
+            
