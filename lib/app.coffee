@@ -96,6 +96,9 @@ app.get /documentation\/.*$/, (req, res, next) ->
     return
   return 
 
+app.get '/', (req, res) ->
+  res.render 'index.jade'
+
 app.get '/modules', (req, res) ->
   modules = for name in Object.keys(req.modules.by_name).sort()
     mod = req.modules.by_name[name]

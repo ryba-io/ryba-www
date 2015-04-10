@@ -10,49 +10,50 @@ html
     link(rel='stylesheet', type='text/css', href='./vendors/semantic-ui/dist/semantic.min.css')
     link(rel='stylesheet', type='text/css', href='./css/ryba.css')
     //- meta(name="viewport", content="width=device-width, initial-scale=1")
-    script(type='text/javascript', src='vendors/jquery/dist/jquery.min.js')
-    script(type='text/javascript', src='vendors/semantic-ui/dist/semantic.min.js')
-    script(type='text/javascript', src='js/ryba.js')
-    //- script(type='text/javascript', src='vendors/bootstrap/js/bootstrap.min.js')
+    //- script(type='text/javascript', src='vendors/jquery/dist/jquery.min.js')
+    //- script(type='text/javascript', src='vendors/semantic-ui/dist/semantic.min.js')
+    //- script(type='text/javascript', src='js/ryba.js')
+    script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
+    script(type='text/javascript', src='http://localhost:8080/bundle.js')
 
     script
       :coffeescript
         $().ready ->
           console.log 'ready'
   body#ryba.pushable
-    //- #toc.ui.left.vertical.inverted.labeled.icon.sidebar.menu
-    #toc.ui.left.vertical.inverted.sidebar.menu.uncover //.visible
-      .ui.right.aligned.search.item
-        .ui.icon.input
-          input.prompt(placeholder="Filter...", type="text")
-          i.search.icon
-        .results
-      a.item
-        i.home.icon
-        span.text Home
-    //- .ui.black.big.launch.right.attached.fixed.button
+    .toc
     #launch.ui.attached.right.black.fixed.button
       i.content.icon
       span.text Menu
     #header.ui.top.fixed.inverted.main.borderless.menu
-      .header.container
-        .item.logo
-          img(src='./img/logo.png')
-        .item.intro
-          p Ryba - deploy multi-tenant Hadoop Clusters
-          span.ui.label.large
-            i.student.icon
-            | Documentation
-          span.ui.label.large
-            i.list.icon
-            | Modules
-          span.ui.label.large
-            i.github.icon
-            | Source Code
-    .pusher
+      div
+        .header.container
+          .item.logo
+            img(src='/img/logo.png')
+          .item.intro
+            p Ryba - deploy multi-tenant Hadoop Clusters
+            a.ui.label.large(href="/documentation")
+              i.student.icon
+              | Documentation
+            a.ui.label.large(href="/modules")
+              i.list.icon
+              | Modules
+            a.ui.label.large(href="https://github.com/ryba-io/ryba")
+              i.github.icon
+              | Source Code
+    #content.pusher
       .full.height
-        .main.container
-          .ui.header HDFS NameNode
+        .main.title.segment
+          .container
+            .ui.sixteen.wide.column.grid
+              .ten.wide.column
+                .ui.horizontal.segment
+              .six.wide.column
+                .ui.horizontal.segment
+                  .commands
+        .main.content.container
+          h1 hello
+          .ui.header Header example
           .ui.divider
           .ui.page.grid
             .eight.wide.column
