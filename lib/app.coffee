@@ -13,7 +13,6 @@ return console.log parameters.help() if params.help
 
 fs = require 'fs'
 http = require 'http'
-stylus = require 'stylus'
 nib = require 'nib'
 express = require 'express'
 morgan = require 'morgan'
@@ -41,14 +40,6 @@ app.use session secret: 'my secret', resave: true, saveUninitialized: true
 
 modules = require './modules'
 app.use modules
-app.use stylus.middleware
-  src: "#{__dirname}/../src"
-  dest: "#{__dirname}/../public"
-  compile: (str, path) ->
-    stylus(str)
-    .set('filename', path)
-    .set('compress', config?.css?.compress)
-    .use nib()
 
 app.use jade_static
   baseDir: path.join __dirname, '/../src'
