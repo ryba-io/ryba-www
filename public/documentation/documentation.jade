@@ -9,50 +9,55 @@ html
     script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
     script(type='text/javascript', src='http://localhost:8080/bundle.js')
   body#ryba.pushable
-    div#mainContent
-      div#header.ui.top.fixed.inverted.main.borderless.menu
-        div
-          .header.container
-            .item.logo
-              img(src='/img/logo.png')
-            .item.intro
-              p Ryba - deploy multi-tenant Hadoop Clusters
-              a.ui.label.large(href="/documentation")
-                i.student.icon
-                | Documentation
-              a.ui.label.large(href="")
-                i.list.icon
-                | Modules
-              a.ui.label.large(href="https://github.com/ryba-io/ryba")
-                i.github.icon
-                | Source Code
-      div#leftMenu.ui.inverted.vertical.pointing.menu
-            div.item
-                | Quick Start
-                div.menu
-                    a.item(href="/documentation/ryba")
-                      | What is ryba
-                    a.item(href="/documentation/start")
-                      | Getting Started
-            div.item
-                | Guides
-                div.menu
-                    a.item(href="/documentation/Tutorial")
-                      | Tutorial
-                    a.item(href="/documentation/FirstMiddleware")
-                      | Your first Middleware
-            div.item
-                | How To contribute
-                div.menu
-                    a.item(href="/documentation/Github")
-                      | Fork from Github
-                    a.item(href="/documentation/SubmitMiddleware")
-                      | Submit your Middleware
-        .main.content.container
-              .ui.close.right.rail
-                .ui.sticky.fixed.top
-                  .ui.secondary.vertical.following.fluid.accordion.menu
-              div#docContent.content.main
-                  != srcmd
-        .toc(style="display:node")     
+    div#leftMenu.ui.vertical.inverted.sidebar.menu.left
+        div.ui.search
+          div.ui.icon.input.fluid.item
+            input.prompt(placeholder="Search...",type="text")
+            i.search.icon
+          div.item
+              | Quick Start
+              div.menu
+                  a.item(href="/documentation/ryba")
+                    | What is ryba
+                  a.item(href="/documentation/start")
+                    | Getting Started
+          div.item
+              | Guides
+              div.menu
+                  a.item(href="/documentation/Tutorial")
+                    | Tutorial
+                  a.item(href="/documentation/FirstMiddleware")
+                    | Your first Middleware
+          div.item
+              | How To contribute
+              div.menu
+                  a.item(href="/documentation/Github")
+                    | Fork from Github
+                  a.item(href="/documentation/SubmitMiddleware")
+                    | Submit your Middleware
+      div#launch.ui.black.big.launch.right.attached.fixed.button
+          i.content.icon
+          span.text Menu
+      div#content.pusher
+        div#header.ui.fixed.inverted.main.borderless.menu
+          div
+            .header.container
+              .item.logo
+                img(src='/img/logo.png')
+              .item.intro
+                p Ryba - deploy multi-tenant Hadoop Clusters
+                a.ui.label.large(href="/documentation")
+                  i.student.icon
+                  | Documentation
+                a.ui.label.large(href="")
+                  i.list.icon
+                  | Modules
+                a.ui.label.large(href="https://github.com/ryba-io/ryba")
+                  i.github.icon
+                  | Source Code
+        div.full.heiht
+            div.main.title.segment
+              div.class.container
+                != srcmd
+          
             
