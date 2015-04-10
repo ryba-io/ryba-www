@@ -30,10 +30,10 @@ html
             div.item
                 | Quick Start
                 div.menu
-                    a.item(href="/documentation/gettingStarted")
+                    a.item(href="/documentation/ryba")
+                      | What is ryba
+                    a.item(href="/documentation/start")
                       | Getting Started
-                    a.item(href="/documentation/Motivation")
-                      | Motivation
             div.item
                 | Guides
                 div.menu
@@ -52,6 +52,7 @@ html
               .ui.close.right.rail
                 .ui.sticky.fixed.top
                   .ui.secondary.vertical.following.fluid.accordion.menu
-              != srcmd
-                
+              div#docContent.content.main
+                  != srcmd
+        .toc(style="display:node")     
             

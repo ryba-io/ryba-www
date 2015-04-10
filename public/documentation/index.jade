@@ -30,10 +30,10 @@ html
             div.item
                 | Quick Start
                 div.menu
-                    a.item(href="/documentation/gettingStarted")
+                    a.item(href="/documentation/ryba")
+                      | What is ryba
+                    a.item(href="/documentation/start")
                       | Getting Started
-                    a.item(href="/documentation/Motivation")
-                      | Motivation
             div.item
                 | Guides
                 div.menu
@@ -50,15 +50,38 @@ html
                       | Submit your Middleware
       div.main.container
           h1.ui.dividing.header 
-              |Documentation 
-              h2.ui.header 
-                |What is ryba
-              div
-                p.description
-                  |Ryba boostraps and manages a full secured Hadoop cluster with one command. This
-                  |is an [Open-source software (OSS) project][oss] released under the
-                  |[new BSD license][license] developed for one of the World largest utility
-                  |company. It is now operationnal.
+              | WELCOME TO THE RYBA DOCUMENTATION
+          div
+            p.description
+              |You can use the left menu for browsing documentation
+              |We advice you to start by the Quick Start Section 
+          h3.ui.header
+            i.checkmark.icon
+            | COMPLETE
+          div
+            p.description
+              |Before installing Hadoop, Ryba can boostraps to the clusters and install on each servers the  essentials components of the OS from a single ssh connection
+          h3.ui.header
+            i.move.icon
+            | Flexible
+          div
+            p.description
+              |You can choose easily in one configuration file which Hadoop's components you want and the way they are spread over the cluster
+              |You can go directly without changing the default configuration if you wan to test ryba
+          h3.ui.header
+            i.lock.icon
+            | Secured
+          div
+            p.description
+              |Ryba bootstraps with SSH ton ensure secured connections to the clusters.
+              |Every components is authenticated with SASL security layer 
+          h3.ui.header
+            i.cubes.icon
+            | Middlewares
+          div
+            p.description
+              |Ryba is  written with a middlewares based structure. You can add easily middlewares to expand the ryba's functionalities.
+
 
 
                 
