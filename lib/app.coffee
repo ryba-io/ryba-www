@@ -140,8 +140,13 @@ app.get /documentation$/,  (req, res, next)  ->
 
 app.use serve_index path.resolve __dirname, '../public'
 
-if process.env.NODE_ENV is 'development'
-  app.use errorhandler()
+# if process.env.NODE_ENV is 'development'
+#   app.use errorhandler()
+
+app.use (err, req, res, next) ->
+  code = if typeof err.code is 'number' then err.code else 500
+  code = 404 if err.code is 'ENOENT'
+  res.status(code).render 'error.jade', error: err
 
 server.listen params.port
 module.exports = server
