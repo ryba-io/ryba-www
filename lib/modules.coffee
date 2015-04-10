@@ -93,8 +93,13 @@ exports.modules = (options, callback) ->
           html = md.render source
           module.html = html
           $ = cheerio.load html
-          title = $('h1').html()
-          module.title = title
+          $title = $('h1')
+          $description = $title.next('p')
+          module.title = $title.html()
+          module.description = $description.html()
+          # console.log ''
+          # console.log module.title
+          # console.log module.description
           next()
       .then next
   .then (err) ->
