@@ -13,7 +13,7 @@ gkeys = {}
 
 ModuleItem = React.createClass
   render: ->
-    url = "/module/#{@props.module.name}.html"
+    url = "/module/#{@props.module.name}"
     <div className="item">
       <a href={url} className="ui inverted small header">{this.props.module.title}</a>
     </div>

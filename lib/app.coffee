@@ -70,7 +70,8 @@ app.get '/modules.json', (req, res) ->
 
 app.get /module\/.*/, (req, res, next) ->
   name = req.url.split('/').slice(2).join('/')
-  name = "#{path.dirname name}/#{path.basename name, '.html'}"
+  # name = "#{path.dirname name}/#{path.basename name, '.html'}"
+  # name = "#{path.dirname name}/#{name}"
   filename = "#{__dirname}/../node_modules/#{name}.coffee.md"
   fs.readFile filename, 'utf8', (err, content) ->
     return next err if err
