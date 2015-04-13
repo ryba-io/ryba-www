@@ -24,9 +24,9 @@ html
         div.item
             | Guides
             div.menu
-                a.item(href="/documentation/Tutorial")
+                a.item(href="/documentation/tutorial")
                   | Tutorial
-                a.item(href="/documentation/FirstMiddleware")
+                a.item(href="/documentation/examples")
                   | Your first Middleware
         div.item
             | How To contribute
@@ -56,42 +56,69 @@ html
                   i.github.icon
                   | Source Code
         div.full.height
-            div.main.title.segment
-              div.class.container
+            div.main.title.header.segment
+            .main.content.container
                 h1.ui.dividing.header 
                   | WELCOME TO THE RYBA DOCUMENTATION
-            div.main.container
+                .ui.close.right.rail
+                      .ui.sticky.fixed.top
+                              #rightMenu.ui.secondary.vertical.following.fluid.accordion.menu
                 div.introduction
-                  |You can use the left menu for browsing documentation
-                  |We advice you to start by the Quick Start Section 
+                  p
+                  |You can use the left menu for browsing documentation.
+                  p
+                  |We advice you to start by the Quick Start Section !
+                br
                 div
+                  h2
+                    |Documentation Summary
+                  ul
+                    li
+                      |Ryba's history
+                    li
+                      |Ryba's motivations
+                    li
+                      |Tutorials
+                    li
+                      |Guides
+                    li
+                      |....
                   p.description
-                h3.ui.header
-                  i.checkmark.icon
-                  | COMPLETE
-                div
+                    |You can start by reading about what is Ryba in <a href="/documentation/ryba">Ryba's section</a>
+                    |or you can go directly to the <a href="/documentation/ryba">getting started section</a> if you wan't to enter the subject right away and starting to install an try RYBA!
                   p.description
-                    |Before installing Hadoop, Ryba can boostraps to the clusters and install on each servers the  essentials components of the OS from a single ssh connection
-                h3.ui.header
-                  i.move.icon
-                  | Flexible
-                div
-                  p.description
-                    |You can choose easily in one configuration file which Hadoop's components you want and the way they are spread over the cluster
-                    |You can go directly without changing the default configuration if you wan to test ryba
-                h3.ui.header
-                  i.lock.icon
-                  | Secured
-                div
-                  p.description
-                    |Ryba bootstraps with SSH ton ensure secured connections to the clusters.
-                    |Every components is authenticated with SASL security layer 
-                h3.ui.header
-                  i.cubes.icon
-                  | Middlewares
-                div
-                  p.description
-                    |Ryba is  written with a middlewares based structure. You can add easily middlewares to expand the ryba's functionalities.
+                    |You can find more complete <a href="/documentation/tutorial">tutorials</a> and processes in the guides section
+                    |Browse some <a href="/documentation/examples">examples</a> to see what you can do and how RYBA is extensible.
+                  p
+                    | Let's Go !
+                  h2
+                    |Why use ryba ?             
+                    h3.ui.header
+                      i.checkmark.icon
+                      | COMPLETE
+                    div
+                      p.description
+                        |Before installing Hadoop, Ryba can boostraps to the clusters and install on each servers the  essentials components of the OS from a single ssh connection
+                    h3.ui.header
+                      i.move.icon
+                      | Flexible
+                    div
+                      p.description
+                        |You can choose easily in one configuration file which Hadoop's components you want and the way they are spread over the cluster
+                        |You can go directly without changing the default configuration if you wan to test ryba
+                    h3.ui.header
+                      i.lock.icon
+                      | Secured
+                    div
+                      p.description
+                        |Ryba bootstraps with SSH ton ensure secured connections to the clusters.
+                        |Every components is authenticated with SASL security layer 
+                    h3.ui.header
+                      i.cubes.icon
+                      | Middlewares
+                    div
+                      p.description
+                        |Ryba is  written with a middlewares based structure. You can add easily middlewares to expand the ryba's functionalities.
 
 
 
