@@ -33,6 +33,7 @@ html
               | Source Code
     #content.pusher
       .full.height
+        block home_anim
         .segment.ryba.main.title
           .container
             .ui.sixteen.wide.column.grid
@@ -42,24 +43,6 @@ html
                 .ui.horizontal.segment
                   .commands
         .main.content.container
-          //- .ui.close.right.rail
-          //-   .ui.sticky.fixed.top
-          //-     .ui.secondary.vertical.following.fluid.menu
-          //-       .item
-          //-         a.active.title
-          //-           i.dropdown.icon(tabindex=0)
-          //-           b ryba/hbase/regionserver/install
-          //-         .active.content.menu
-          //-             //- a.item(href="") HBase RegionServer Install
-          //-             a.item(href="#iptables") IPTables
-          //-             a.item(href="#service") Service
-          //-             a.item(href="#zookeeper-jaas") Zookeeper JAAS
-          //-             a.item(href="#configure") Configure
-          //-             a.item(href="#opts") Opts
-          //-             a.item(href="#metrics") Metrics
-          //-             a.item(href="#spnego") SPNEGO
-          //-             a.item(href="#start") Start
-          //-             a.item(href="#check") Check
           block content
       .ui.inverted.black.footer.vertical.segment
         .container
@@ -82,7 +65,7 @@ html
               h3.ui.inverted.header Suggestions, problems, feedback?
               p
               | Deploying Hadoop in a secured multi-tenant mode take a lot of
-              | effort. Support this community effort with your contribution.
+              | energy. Support this community effort with your contribution.
               | Review the documentation, test Ryba in multiple environments
               | or sponsor new features.
               form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")

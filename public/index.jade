@@ -1,80 +1,49 @@
-doctype html    
-html
-  head
-    meta(charset='utf-8')
-    title Ryba - Multi-Tenant Hadoop deployment
-    link(rel='icon', type='image/vnd.microsoft.icon', href='/img/favicon.ico')
-    link(rel='shortcut icon', type='image/x-icon', href='/img/favicon.ico')
-    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
-    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
-    //- meta(name="viewport", content="width=device-width, initial-scale=1")
-    script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
-    script(type='text/javascript', src='http://localhost:8080/bundle.js')
-  body#ryba.pushable.home
-    .toc
-    #launch.ui.attached.right.black.fixed.button
-      i.content.icon
-      span.text Menu
-    #header.ui.top.fixed.inverted.main.borderless.menu
-      div
-        .header.container
-          a.logo(href="/")
-            img(src='/img/logo.png')
-          .item.intro
-            p Ryba - deploy multi-tenant Hadoop Clusters
-            a.ui.label.large(href="/documentation")
-              i.student.icon
-              | Documentation
-            a.ui.label.large(href="/modules")
-              i.list.icon
-              | Modules
-            a.ui.label.large(href="https://github.com/ryba-io/ryba")
-              i.github.icon
-              | Source Code
-    #content.pusher
-      .full.height
-        .ryba.anim
-          .container
-            .output
-              .nano
-                .nano-content
-                  //- table goes here
-            //- .ui.menu.ryba.commands
-            .ryba.commands
-              a Install
-              a Start
-              a Stop
-              a Status
-              a Check
-              //- a Backup
-        .main.content.container
-          h1 hello
-          
-          h3.ui.header
-            i.checkmark.icon
-            | COMPLETE
-          div
-            p.description
-              |Before installing Hadoop, Ryba can boostraps to the clusters and install on each servers the  essentials components of the OS from a single ssh connection
-          h3.ui.header
-            i.move.icon
-            | Flexible
-          div
-            p.description
-              |You can choose easily in one configuration file which Hadoop's components you want and the way they are spread over the cluster
-              |You can go directly without changing the default configuration if you wan to test ryba
-          h3.ui.header
-            i.lock.icon
-            | Secured
-          div
-            p.description
-              |Ryba bootstraps with SSH ton ensure secured connections to the clusters.
-              |Every components is authenticated with SASL security layer 
-          h3.ui.header
-            i.cubes.icon
-            | Middlewares
-          div
-            p.description
-              | Ryba is  written with a middlewares based structure. You can add easily middlewares to expand the ryba's functionalities.
 
-    
+extends ./layout.jade
+
+block home_anim
+  .ryba.anim
+    .container
+      .output
+        .nano
+          .nano-content
+            //- table goes here
+      //- .ui.menu.ryba.commands
+      .ryba.commands
+        a Install
+        a Start
+        a Stop
+        a Status
+        a Check
+        //- a Backup
+block content
+  h1 hello
+  
+  h3.ui.header
+    i.checkmark.icon
+    | COMPLETE
+  div
+    p.description
+    | Before installing Hadoop, Ryba can boostraps to the clusters and install on each servers the  essentials components of the OS from a single ssh connection
+  h3.ui.header
+    i.move.icon
+    | Flexible
+  div
+    p.description
+    | You can choose easily in one configuration file which Hadoop's components you want and the way they are spread over the cluster
+    | You can go directly without changing the default configuration if you wan to test ryba
+  h3.ui.header
+    i.lock.icon
+    | Secured
+  div
+    p.description
+    | Ryba bootstraps with SSH ton ensure secured connections to the clusters.
+    | Every components is authenticated with SASL security layer 
+  h3.ui.header
+    i.cubes.icon
+    | Middlewares
+  div
+    p.description
+    | Ryba is  written with a middlewares based structure. You can add easily middlewares to expand the ryba's functionalities.
+
+  
