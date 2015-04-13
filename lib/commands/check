@@ -1,0 +1,259 @@
+worker2.ryba        Bootstrap # Connection                  OK                  131ms
+master2.ryba        Bootstrap # Connection                  OK                  143ms
+front1.ryba         Bootstrap # Connection                  OK                  149ms
+master1.ryba        Bootstrap # Connection                  OK                  171ms
+master3.ryba        Bootstrap # Connection                  OK                  167ms
+worker1.ryba        Bootstrap # Connection                  OK                  201ms
+master1.ryba        Bootstrap # Disk Info                   OK                  25ms
+master2.ryba        Bootstrap # Disk Info                   OK                  26ms
+worker2.ryba        Bootstrap # Disk Info                   OK                  46ms
+front1.ryba         Bootstrap # Disk Info                   OK                  27ms
+master3.ryba        Bootstrap # Disk Info                   OK                  30ms
+master1.ryba        Bootstrap # CPU Info                    OK                  28ms
+master2.ryba        Bootstrap # CPU Info                    OK                  30ms
+worker2.ryba        Bootstrap # CPU Info                    OK                  37ms
+worker1.ryba        Bootstrap # Disk Info                   OK                  37ms
+front1.ryba         Bootstrap # CPU Info                    OK                  44ms
+master2.ryba        Bootstrap # Mem Info                    OK                  23ms
+master1.ryba        Bootstrap # Mem Info                    OK                  34ms
+worker2.ryba        Bootstrap # Mem Info                    OK                  23ms
+master3.ryba        Bootstrap # CPU Info                    OK                  50ms
+worker1.ryba        Bootstrap # CPU Info                    OK                  43ms
+front1.ryba         Bootstrap # Mem Info                    OK                  41ms
+worker2.ryba        OpenLDAP Client # Wait                  READY               28ms
+master1.ryba        OpenLDAP Client # Wait                  READY               38ms
+master2.ryba        OpenLDAP Client # Wait                  READY               48ms
+worker1.ryba        Bootstrap # Mem Info                    OK                  23ms
+front1.ryba         OpenLDAP Client # Wait                  READY               28ms
+master3.ryba        Bootstrap # Mem Info                    OK                  54ms
+worker1.ryba        OpenLDAP Client # Wait                  READY               23ms
+master3.ryba        OpenLDAP Client # Wait                  READY               42ms
+master1.ryba        OpenLDAP Client # Check Search          MODIFIED            238ms
+worker2.ryba        OpenLDAP Client # Check Search          MODIFIED            254ms
+front1.ryba         OpenLDAP Client # Check Search          MODIFIED            303ms
+worker1.ryba        OpenLDAP Client # Check Search          MODIFIED            304ms
+master2.ryba        OpenLDAP Client # Check Search          MODIFIED            338ms
+master3.ryba        OpenLDAP Client # Check Search          MODIFIED            275ms
+master3.ryba        HTTPD # Check Status                    MODIFIED            56ms
+worker1.ryba        HDFS DN # Wait                          READY               62ms
+worker2.ryba        HDFS DN # Wait                          READY               82ms
+front1.ryba         HDFS DN # Wait                          READY               49ms
+master1.ryba        ZooKeeper Server # Check Registration   CHECKED             3.133s
+master2.ryba        ZooKeeper Server # Check Registration   CHECKED             3.178s
+master1.ryba        HDFS JN Check # SPNEGO                  CHECKED             272ms
+master2.ryba        HDFS JN Check # SPNEGO                  CHECKED             290ms
+master3.ryba        ZooKeeper Server # Check Registration   CHECKED             3.274s
+master1.ryba        HDFS ZKFC # Check SSH Fencing           CHECKED             250ms
+master1.ryba        HDFS NN # Wait                          READY               48ms
+master2.ryba        HDFS ZKFC # Check SSH Fencing           CHECKED             262ms
+master2.ryba        HDFS NN # Wait                          READY               58ms
+master1.ryba        HDFS NN # Check HTTP                    CHECKED             234ms
+master2.ryba        HDFS NN # Check HTTP                    CHECKED             255ms
+master3.ryba        HDFS JN Check # SPNEGO                  CHECKED             859ms
+worker1.ryba        HDFS DN # Wait Safemode                 READY               4.389s
+master3.ryba        Hive HCatalog # Wait                    READY               35ms
+worker1.ryba        HDFS NN # Wait                          READY               51ms
+master3.ryba        Hive HCatalog # Check Database          CHECKED             118ms
+master3.ryba        Hive HCatalog # Check Port              CHECKED             22ms
+worker1.ryba        HDFS DN # Check Disk Capacity           CHECKED             206ms
+master3.ryba        MapReduce JHS # Wait                    READY               40ms
+worker2.ryba        HDFS DN # Wait Safemode                 READY               4.669s
+worker2.ryba        HDFS NN # Wait                          READY               57ms
+worker2.ryba        HDFS DN # Check Disk Capacity           CHECKED             215ms
+front1.ryba         HDFS DN # Wait Safemode                 READY               6.567s
+master2.ryba        HDFS NN # Check HA Health               CHECKED             5.77s
+master2.ryba        Yarn RM # Wait RM                       READY               39ms
+master2.ryba        Kafka Server # Check TCP                MODIFIED            23ms
+worker1.ryba        HDFS DN # Check HDFS                    SKIPPED             5.63s
+master1.ryba        HDFS NN # Check HA Health               CHECKED             6.51s
+master1.ryba        HBase Master # Check SPNEGO             CHECKED             78ms
+master1.ryba        Kafka Server # Check TCP                MODIFIED            17ms
+worker2.ryba        HDFS DN # Check HDFS                    SKIPPED             5.683s
+master3.ryba        MapReduce Client # Check                OK                  9.74s
+master3.ryba        HDFS DN # Wait                          READY               94ms
+worker1.ryba        HDFS DN # Check FSCK                    CHECKED             5.391s
+worker2.ryba        HDFS DN # Check FSCK                    CHECKED             5.489s
+front1.ryba         HDFS Client # Check                     OK                  11.955s
+front1.ryba         Profile # Upload                        OK                  79ms
+front1.ryba         Groups                                  OK                  1ms
+front1.ryba         Users                                   OK                  0ms
+front1.ryba         Network # Hosts                         OK                  153ms
+front1.ryba         Network # Hostname                      OK                  134ms
+front1.ryba         Network # DNS Resolver                  OK                  96ms
+front1.ryba         Network # Interfaces                    OK                  261ms
+front1.ryba         YUM # Check                             OK                  27ms
+front1.ryba         YUM # Configuration                     OK                  127ms
+worker1.ryba        HDFS DN # Check WebHDFS                 SKIPPED             3.967s
+worker1.ryba        MapReduce JHS # Wait                    READY               20ms
+front1.ryba         YUM # Repositories                      OK                  288ms
+worker2.ryba        HDFS DN # Check WebHDFS                 SKIPPED             3.969s
+worker2.ryba        MapReduce JHS # Wait                    READY               17ms
+master3.ryba        HDFS DN # Wait Safemode                 READY               5.839s
+front1.ryba         YUM # Update                            OK                  1.979s
+worker1.ryba        MapReduce Client # Check                OK                  4.122s
+worker2.ryba        MapReduce Client # Check                OK                  3.994s
+front1.ryba         YUM # Packages                          OK                  2.777s
+front1.ryba         Java # Install OpenJDK                  OK                  2.537s
+front1.ryba         Java # Env                              OK                  116ms
+front1.ryba         Hadoop Core # Users & Groups            MODIFIED            412ms
+front1.ryba         Hadoop Core # User Test                 OK                  226ms
+front1.ryba         Hadoop Core # Install                   OK                  0ms
+front1.ryba         Hadoop Core # Env                       OK                  38ms
+front1.ryba         Hadoop Core # Configuration             OK                  151ms
+front1.ryba         Hadoop Core # Topology                  OK                  151ms
+front1.ryba         Hadoop Core # Hadoop OPTS               OK                  167ms
+front1.ryba         Hadoop Core # Policy                    OK                  119ms
+front1.ryba         Hadoop Core # Keytabs                   OK                  32ms
+front1.ryba         Hadoop Core # Compression               OK                  1ms
+front1.ryba         Hadoop Core # Web UI                    OK                  44ms
+front1.ryba         Hadoop Core SSL # Configure             OK                  398ms
+front1.ryba         Hadoop Core SSL # JKS stores            OK                  899ms
+front1.ryba         Yarn RM # Wait RM                       READY               27ms
+worker1.ryba        HDFS Client # Check                     OK                  9.313s
+worker1.ryba        Profile # Upload                        OK                  63ms
+worker1.ryba        Groups                                  OK                  0ms
+worker1.ryba        Users                                   OK                  0ms
+worker2.ryba        HDFS Client # Check                     OK                  9.151s
+worker1.ryba        Network # Hosts                         OK                  127ms
+worker2.ryba        Profile # Upload                        OK                  64ms
+worker2.ryba        Groups                                  OK                  0ms
+worker2.ryba        Users                                   OK                  0ms
+master3.ryba        HDFS Client # Check                     OK                  13.052s
+worker1.ryba        Network # Hostname                      OK                  150ms
+worker2.ryba        Network # Hosts                         OK                  156ms
+master3.ryba        Profile # Upload                        OK                  94ms
+master3.ryba        Groups                                  OK                  0ms
+master3.ryba        Users                                   OK                  0ms
+worker1.ryba        Network # DNS Resolver                  OK                  109ms
+worker2.ryba        Network # Hostname                      OK                  163ms
+master3.ryba        Network # Hosts                         OK                  160ms
+worker2.ryba        Network # DNS Resolver                  OK                  98ms
+master3.ryba        Network # Hostname                      OK                  154ms
+worker1.ryba        Network # Interfaces                    OK                  316ms
+master3.ryba        Network # DNS Resolver                  OK                  80ms
+worker1.ryba        YUM # Check                             OK                  42ms
+worker2.ryba        Network # Interfaces                    OK                  314ms
+worker1.ryba        YUM # Configuration                     OK                  155ms
+worker2.ryba        YUM # Check                             OK                  34ms
+master3.ryba        Network # Interfaces                    OK                  324ms
+master3.ryba        YUM # Check                             OK                  42ms
+worker2.ryba        YUM # Configuration                     OK                  165ms
+master3.ryba        YUM # Configuration                     OK                  156ms
+worker1.ryba        YUM # Repositories                      OK                  402ms
+worker2.ryba        YUM # Repositories                      OK                  421ms
+front1.ryba         YARN Client # Check CLI                 CHECKED             4.841s
+front1.ryba         HDFS NN # Wait                          READY               51ms
+front1.ryba         HBase Master # Wait                     READY               24ms
+master3.ryba        YUM # Repositories                      OK                  544ms
+worker1.ryba        YUM # Update                            OK                  2.714s
+worker2.ryba        YUM # Update                            OK                  2.514s
+master3.ryba        YUM # Update                            OK                  3.899s
+worker2.ryba        YUM # Packages                          OK                  4.084s
+worker1.ryba        YUM # Packages                          OK                  4.804s
+worker2.ryba        Java # Install OpenJDK                  OK                  3.325s
+worker2.ryba        Java # Env                              OK                  108ms
+worker1.ryba        Java # Install OpenJDK                  OK                  2.844s
+master3.ryba        YUM # Packages                          OK                  6.035s
+worker1.ryba        Java # Env                              OK                  108ms
+worker2.ryba        Hadoop Core # Users & Groups            MODIFIED            512ms
+worker2.ryba        Hadoop Core # User Test                 OK                  194ms
+worker2.ryba        Hadoop Core # Install                   OK                  0ms
+worker1.ryba        Hadoop Core # Users & Groups            MODIFIED            498ms
+worker2.ryba        Hadoop Core # Env                       OK                  45ms
+worker2.ryba        Hadoop Core # Configuration             OK                  154ms
+worker1.ryba        Hadoop Core # User Test                 OK                  195ms
+worker1.ryba        Hadoop Core # Install                   OK                  0ms
+worker1.ryba        Hadoop Core # Env                       OK                  52ms
+worker2.ryba        Hadoop Core # Topology                  OK                  202ms
+worker1.ryba        Hadoop Core # Configuration             OK                  150ms
+worker1.ryba        Hadoop Core # Topology                  OK                  178ms
+worker2.ryba        Hadoop Core # Hadoop OPTS               OK                  225ms
+worker2.ryba        Hadoop Core # Policy                    OK                  144ms
+worker2.ryba        Hadoop Core # Keytabs                   OK                  42ms
+worker2.ryba        Hadoop Core # Compression               OK                  1ms
+worker1.ryba        Hadoop Core # Hadoop OPTS               OK                  219ms
+worker2.ryba        Hadoop Core # Web UI                    OK                  53ms
+worker1.ryba        Hadoop Core # Policy                    OK                  151ms
+worker1.ryba        Hadoop Core # Keytabs                   OK                  41ms
+worker1.ryba        Hadoop Core # Compression               OK                  0ms
+worker1.ryba        Hadoop Core # Web UI                    OK                  59ms
+worker2.ryba        Hadoop Core SSL # Configure             OK                  433ms
+worker1.ryba        Hadoop Core SSL # Configure             OK                  390ms
+worker2.ryba        Hadoop Core SSL # JKS stores            OK                  1.682s
+master3.ryba        Java # Install OpenJDK                  OK                  3.518s
+worker2.ryba        Yarn RM # Wait RM                       READY               32ms
+master3.ryba        Java # Env                              OK                  148ms
+worker1.ryba        Hadoop Core SSL # JKS stores            OK                  1.736s
+worker1.ryba        Yarn RM # Wait RM                       READY               36ms
+master3.ryba        Hadoop Core # Users & Groups            MODIFIED            747ms
+master3.ryba        Hadoop Core # User Test                 OK                  253ms
+master3.ryba        Hadoop Core # Install                   OK                  0ms
+master3.ryba        Hadoop Core # Env                       OK                  93ms
+master3.ryba        Hadoop Core # Configuration             MODIFIED            725ms
+master3.ryba        Hadoop Core # Topology                  OK                  250ms
+master3.ryba        Hadoop Core # Hadoop OPTS               OK                  274ms
+master3.ryba        Hadoop Core # Policy                    OK                  261ms
+master3.ryba        Hadoop Core # Keytabs                   OK                  55ms
+master3.ryba        Hadoop Core # Compression               OK                  1ms
+master3.ryba        Hadoop Core # Web UI                    OK                  65ms
+master3.ryba        Hadoop Core SSL # Configure             OK                  560ms
+worker2.ryba        YARN Client # Check CLI                 CHECKED             4.481s
+worker2.ryba        HBase RegionServer # Check SPNEGO       CHECKED             105ms
+worker1.ryba        YARN Client # Check CLI                 CHECKED             4.726s
+worker2.ryba        HBase RegionServer # Check HTTP JMX     CHECKED             429ms
+worker1.ryba        HBase RegionServer # Check SPNEGO       CHECKED             106ms
+worker1.ryba        HBase RegionServer # Check HTTP JMX     CHECKED             415ms
+master3.ryba        Hadoop Core SSL # JKS stores            OK                  2.388s
+master3.ryba        Yarn RM # Wait RM                       READY               23ms
+master3.ryba        YARN Client # Check CLI                 CHECKED             6.814s
+master3.ryba        Tez # Check HDFS                        OK                  6.619s
+master3.ryba        HDFS NN # Wait                          READY               42ms
+master3.ryba        HBase Master # Wait                     READY               28ms
+worker2.ryba        HBase RegionServer # Check Shell        OK                  14.934s
+worker1.ryba        HBase RegionServer # Check Shell        OK                  14.841s
+front1.ryba         HBase Client # Check Shell              OK                  41.822s
+master3.ryba        HBase Client # Check Shell              OK                  34.298s
+front1.ryba         HBase Client # Check MapReduce          CHECKED             39.387s
+master3.ryba        HBase Client # Check MapReduce          CHECKED             38.913s
+front1.ryba         HBase Client # Check Splits             CHECKED             75.29s
+front1.ryba         MapReduce JHS # Wait                    READY               14ms
+front1.ryba         MapReduce Client # Check                OK                  4.255s
+front1.ryba         Hadoop Pig Check # Client               OK                  3.796s
+front1.ryba         Hadoop Pig Check # HCat                 OK                  4.655s
+front1.ryba         Hive HCatalog # Wait                    READY               18ms
+front1.ryba         Hive Server2 # Wait                     READY               23ms
+front1.ryba         Hive Client # Check Server2             CHECKED             4.691s
+front1.ryba         Hive Client # Check HCat MapReduce      CHECKED             4.521s
+front1.ryba         Hive Client # Check HCat Tez            CHECKED             4.55s
+master3.ryba        HBase Client # Check Splits             CHECKED             79.684s
+master3.ryba        Hive Server2 # Wait                     READY               21ms
+master3.ryba        Hive Server2 # Check Thrift Port        CHECKED             29ms
+master3.ryba        Hive Server2 # Check JDBC               TODO                1ms
+front1.ryba         Tez # Check HDFS                        OK                  5.305s
+front1.ryba         Oozie Client # Check Client             CHECKED             369ms
+front1.ryba         Oozie Client # Check REST               CHECKED             861ms
+master3.ryba        WebHCat # Check Status                  OK                  5.969s
+front1.ryba         Oozie Client # Check HDFS Workflow      SKIPPED             4.291s
+master3.ryba        Hive Client # Check Server2             CHECKED             4.547s
+front1.ryba         Oozie Client # Check MapReduce          SKIPPED             3.986s
+master3.ryba        Hive Client # Check HCat MapReduce      CHECKED             4.43s
+front1.ryba         Oozie Client # Check Pig Workflow       SKIPPED             4.501s
+front1.ryba         Oozie Client # Check HCat Workflow      SKIPPED             
+front1.ryba         Falcon # Check Data Pipelines           SKIPPED             
+front1.ryba         Kafka Server # Wait                     READY               37ms
+master3.ryba        Hive Client # Check HCat Tez            CHECKED             5.173s
+front1.ryba         Kafka Consumer # Check Messages         MODIFIED            4.531s
+front1.ryba         Kafka Producer # Check TCP              MODIFIED            30ms
+front1.ryba         Kafka Producer # Check Messages         MODIFIED            4.599s
+master3.ryba        Hadoop Pig Check # Client               OK                  5.886s
+master3.ryba        Hadoop Pig Check # HCat                 OK                  4.672s
+master3.ryba        HBase RegionServer # Wait               READY               88ms
+master3.ryba        HBase Rest # Check                      SKIPPED             
+master3.ryba        Oozie Client # Check Client             CHECKED             292ms
+master3.ryba        Oozie Client # Check REST               CHECKED             80ms
+master3.ryba        Oozie Client # Check HDFS Workflow      SKIPPED             4.982s
+master3.ryba        Oozie Client # Check MapReduce          SKIPPED             3.704s
+master3.ryba        Oozie Client # Check Pig Workflow       SKIPPED             5.111s
+master3.ryba        Oozie Client # Check HCat Workflow      SKIPPED             
+master3.ryba        Nagios # Check Config                   CHECKED             118ms
+master3.ryba        Nagios # Check Command                  CHECKED             137ms
