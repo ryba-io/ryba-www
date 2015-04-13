@@ -2,25 +2,15 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    title HDFS Web UI
-    link(rel='icon', type='image/vnd.microsoft.icon', href='favicon.ico')
-    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
-    link(rel='stylesheet', type='text/css', href='./fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
-    link(rel='stylesheet', type='text/css', href='./fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
-    link(rel='stylesheet', type='text/css', href='./vendors/semantic-ui/dist/semantic.min.css')
-    link(rel='stylesheet', type='text/css', href='./css/ryba.css')
+    title Ryba - Multi-Tenant Hadoop deployment
+    link(rel='icon', type='image/vnd.microsoft.icon', href='/img/favicon.ico')
+    link(rel='shortcut icon', type='image/x-icon', href='/img/favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
+    link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
     //- meta(name="viewport", content="width=device-width, initial-scale=1")
-    //- script(type='text/javascript', src='vendors/jquery/dist/jquery.min.js')
-    //- script(type='text/javascript', src='vendors/semantic-ui/dist/semantic.min.js')
-    //- script(type='text/javascript', src='js/ryba.js')
     script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
     script(type='text/javascript', src='http://localhost:8080/bundle.js')
-
-    script
-      :coffeescript
-        $().ready ->
-          console.log 'ready'
-  body#ryba.pushable
+  body#ryba.pushable.home
     .toc
     #launch.ui.attached.right.black.fixed.button
       i.content.icon
@@ -28,7 +18,7 @@ html
     #header.ui.top.fixed.inverted.main.borderless.menu
       div
         .header.container
-          .item.logo
+          a.logo(href="/")
             img(src='/img/logo.png')
           .item.intro
             p Ryba - deploy multi-tenant Hadoop Clusters
@@ -43,50 +33,127 @@ html
               | Source Code
     #content.pusher
       .full.height
-        .main.title.segment
-          .container
-            .ui.sixteen.wide.column.grid
-              .ten.wide.column
-                .ui.horizontal.segment
-              .six.wide.column
-                .ui.horizontal.segment
-                  .commands
+        .ryba.anim
+          .output.container
+            .nano
+              .nano-content
+                table
+                  tr
+                    td master1.ryba
+                    td Bootstrap # Connection
+                    td.status OK
+                    td 94ms
+                  tr
+                    td master3.ryba
+                    td Bootstrap # Connection
+                    td.status OK
+                    td 96ms
+                  tr
+                    td front1.ryba
+                    td Bootstrap # Connection
+                    td.status OK
+                    td 98ms
+                  tr
+                    td master2.ryba
+                    td Bootstrap # Connection
+                    td.status OK
+                    td 106ms
+                  tr
+                    td worker2.ryba
+                    td Bootstrap # Connection
+                    td.status OK
+                    td 127ms
+                  tr
+                    td master1.ryba
+                    td Bootstrap # Disk Info
+                    td.status OK
+                    td 24ms
+                  tr
+                    td master2.ryba
+                    td Bootstrap # Disk Info
+                    td.status OK
+                    td 27ms
+                  tr
+                    td front1.ryba
+                    td Bootstrap # Disk Info
+                    td.status OK
+                    td 26ms
+                  tr
+                    td master3.ryba
+                    td Bootstrap # Disk Info
+                    td.status OK
+                    td 30ms
+                  tr
+                    td master1.ryba
+                    td Bootstrap # CPU Info
+                    td.status OK
+                    td 19ms
+                  tr
+                    td master3.ryba
+                    td Bootstrap # CPU Info
+                    td.status OK
+                    td 23ms
+                  tr
+                    td front1.ryba
+                    td Bootstrap # CPU Info
+                    td.status OK
+                    td 30ms
+                  tr
+                    td master2.ryba
+                    td Bootstrap # CPU Info
+                    td.status OK
+                    td 32ms
+                  tr
+                    td worker2.ryba
+                    td Bootstrap # Disk Info
+                    td.status OK
+                    td 28ms
+                  tr
+                    td master1.ryba
+                    td Bootstrap # Mem Info
+                    td.status OK
+                    td 25ms
+                  tr
+                    td master3.ryba
+                    td Bootstrap # Mem Info
+                    td.status OK
+                    td 19ms
+          //- .ui.menu.ryba.commands
+          .ryba.commands.container
+            a.active Install
+            a Start
+            a Stop
+            a Status
+            a Check
+            a Backup
         .main.content.container
           h1 hello
-          .ui.header Header example
-          .ui.divider
-          .ui.page.grid
-            .eight.wide.column
-              p 'test1'
-              p 'test2'
-              p 'test3'
-              p 'test4'
-              p 'test5'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-              p 'test'
-            .eight.wide.column 
-              p 'testa'
-              p 'testb'
-              p 'testc'
-              p 'test4'
-              p 'test5'
+          
+          h3.ui.header
+            i.checkmark.icon
+            | COMPLETE
+          div
+            p.description
+              |Before installing Hadoop, Ryba can boostraps to the clusters and install on each servers the  essentials components of the OS from a single ssh connection
+          h3.ui.header
+            i.move.icon
+            | Flexible
+          div
+            p.description
+              |You can choose easily in one configuration file which Hadoop's components you want and the way they are spread over the cluster
+              |You can go directly without changing the default configuration if you wan to test ryba
+          h3.ui.header
+            i.lock.icon
+            | Secured
+          div
+            p.description
+              |Ryba bootstraps with SSH ton ensure secured connections to the clusters.
+              |Every components is authenticated with SASL security layer 
+          h3.ui.header
+            i.cubes.icon
+            | Middlewares
+          div
+            p.description
+              | Ryba is  written with a middlewares based structure. You can add easily middlewares to expand the ryba's functionalities.
 
-  
+    

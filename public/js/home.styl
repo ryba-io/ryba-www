@@ -1,0 +1,39 @@
+
+@import '../../node_modules/nib'
+
+#ryba
+  .anim
+    padding-top 10rem
+    height 30rem
+    background-color #0e232b
+    width 100%
+    right 0
+    .output
+      padding 0
+      position relative
+      height 60%
+      overflow hidden
+      // .ui.inverted.table
+      //   background-color transparent !important
+      //   border-color transparent
+      table
+        width 100%
+        color #d1f6ff
+        .status
+          color #00c3e0
+    .commands
+      text-align center
+      border-top 1px solid #d1f6ff
+      // .ui.label
+      a
+        user-select none
+        color #d1f6ff
+        padding .5rem
+        display inline-block
+        cursor pointer
+        &:hover
+          color #fff
+        &.active
+          color #0e232b
+          border-radius: bottom 5px
+          background: #d1f6ff
