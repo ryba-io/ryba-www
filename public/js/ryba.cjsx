@@ -1,5 +1,6 @@
 
 require('./ryba.styl')
+require('./home.styl')
 require 'semantic-ui/dist/semantic.css'
 require('semantic-ui/src/definitions/behaviors/visibility.js')
 require('semantic-ui/src/definitions/modules/dropdown.js')
@@ -14,6 +15,7 @@ Commands = require('./Commands.cjsx')
 Sitemap = require('./Sitemap.cjsx')
 Toc = require('./Toc.cjsx')
 require('./content.coffee')
+require('./home.coffee')
 
 if module.hot
   module.hot.accept ->
