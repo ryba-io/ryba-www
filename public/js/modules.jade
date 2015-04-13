@@ -1,0 +1,15 @@
+
+extends ./layout.jade
+
+block content
+  h1 hello
+  each module in modules
+    if module.index
+      .ui.divider
+      h2.ui.header= module.name
+    else
+      h3= module.name
+    if module.description
+      p!= module.description
+
+  
