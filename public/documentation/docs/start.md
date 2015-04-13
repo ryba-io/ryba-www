@@ -1,52 +1,28 @@
-#  Write your own middleware
+# Getting Started
 
-##  Architecture
+## Goal
+  
+### Introduction
 
-Ryba installs hadoop on each server component by component
-The list and configuration for each server's components is placed in the ryba-cluster/conf/servers.coffee file.
-Each module installed has its sources placed in the ryba root directory.
-how does it work ?
+Let's get Started in order to try Ryba !
+The most simple way is to download the ryba-cluster package in addition to the ryba package. It comes with an ready to use configuration and can serve as an example.
+The configuration comes with a ryba deployment which will set up a cluster composed of 6 nodes. 
+Nothing to worry about each node  will take place in a virtual machine for the cluster to fit into your computer !
 
-Your can add the middleware you want to execute in the previous servers.coffee file/
-Your module has to come as a directory that you will place inside the ryba directory.
-For exemple if you want to install a module name myNewModule you will have to place a directory containg the sources
-name 'myNewModule' and place it in ryba directory.
-The result will be /ryba/boostrap
-				   /ryba/hadoop
-				   /ryba/hbase
-				   /ryba/myNewModule
-
-Of course you can then divide your module in sub parts.
-
-##  Needed files
-You have to specify which script ryba will execute in a file named after your component.
-Your file has to have the extension **.coffee.md**
-So for our example the directory tree will be ryba
-					/ryba/boostrap/...
-					/ryba/boostrap/...
-					...
-					/ryba/myNewModule/myNewModule.coffee.md				   
-
-Ryba will read it ( by default ) and see which script to execute for the different commands 
-
-The different commands are : - install
-							 - start
-							 - stop
-							 - check
-							 - status
- For example if you have a script myNewModule_check.coffee.md which checks if the installation of your component is correct
- You have to export it in the module as 'check'  
-
-   ```
-   module.exports.push commands: 'check', modules: 'ryba/myNewModule/myNewModule_check.coffee'
-   ```
- It works the same way if you want to execute several script for one command
-
-    ```
-    module.exports.push commands: 'install', modules: [
-      'ryba/myNewModule/myNewModule_install.coffee'
-      'ryba/myNewModule/myNewModule_check.coffee'
-    ]
-    ```
+The following instructions will help you to install every needed tools :
+* programs
+* ryba packages
+* configurations
 
 
+
+These instructions presume that your host computer is connected to the Internet. You can find further instructions in the documentation to work offline. 
+
+
+### Environnement
+
+You can use any environnement you want , the given instructions are made for UNIX based OS' but you might find the equivalent tools for Windows.
+
+## Installation
+
+### Install Git
