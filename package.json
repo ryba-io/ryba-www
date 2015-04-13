@@ -76,6 +76,7 @@
     "jade": "~1.9.2",
     "jquery": "^2.1.3",
     "jsx-loader": "^0.13.1",
+    "marked": "^0.3.3",
     "masson": "0.1.0",
     "method-override": "2.3.2",
     "morgan": "~1.5.2",
