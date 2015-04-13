@@ -34,98 +34,19 @@ html
     #content.pusher
       .full.height
         .ryba.anim
-          .output.container
-            .nano
-              .nano-content
-                table
-                  tr
-                    td master1.ryba
-                    td Bootstrap # Connection
-                    td.status OK
-                    td 94ms
-                  tr
-                    td master3.ryba
-                    td Bootstrap # Connection
-                    td.status OK
-                    td 96ms
-                  tr
-                    td front1.ryba
-                    td Bootstrap # Connection
-                    td.status OK
-                    td 98ms
-                  tr
-                    td master2.ryba
-                    td Bootstrap # Connection
-                    td.status OK
-                    td 106ms
-                  tr
-                    td worker2.ryba
-                    td Bootstrap # Connection
-                    td.status OK
-                    td 127ms
-                  tr
-                    td master1.ryba
-                    td Bootstrap # Disk Info
-                    td.status OK
-                    td 24ms
-                  tr
-                    td master2.ryba
-                    td Bootstrap # Disk Info
-                    td.status OK
-                    td 27ms
-                  tr
-                    td front1.ryba
-                    td Bootstrap # Disk Info
-                    td.status OK
-                    td 26ms
-                  tr
-                    td master3.ryba
-                    td Bootstrap # Disk Info
-                    td.status OK
-                    td 30ms
-                  tr
-                    td master1.ryba
-                    td Bootstrap # CPU Info
-                    td.status OK
-                    td 19ms
-                  tr
-                    td master3.ryba
-                    td Bootstrap # CPU Info
-                    td.status OK
-                    td 23ms
-                  tr
-                    td front1.ryba
-                    td Bootstrap # CPU Info
-                    td.status OK
-                    td 30ms
-                  tr
-                    td master2.ryba
-                    td Bootstrap # CPU Info
-                    td.status OK
-                    td 32ms
-                  tr
-                    td worker2.ryba
-                    td Bootstrap # Disk Info
-                    td.status OK
-                    td 28ms
-                  tr
-                    td master1.ryba
-                    td Bootstrap # Mem Info
-                    td.status OK
-                    td 25ms
-                  tr
-                    td master3.ryba
-                    td Bootstrap # Mem Info
-                    td.status OK
-                    td 19ms
-          //- .ui.menu.ryba.commands
-          .ryba.commands.container
-            a.active Install
-            a Start
-            a Stop
-            a Status
-            a Check
-            a Backup
+          .container
+            .output
+              .nano
+                .nano-content
+                  //- table goes here
+            //- .ui.menu.ryba.commands
+            .ryba.commands
+              a Install
+              a Start
+              a Stop
+              a Status
+              a Check
+              //- a Backup
         .main.content.container
           h1 hello
           

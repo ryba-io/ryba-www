@@ -26,6 +26,8 @@ serve_index = require 'serve-index'
 serve_static = require 'serve-static'
 jade_static = require 'connect-jade-static'
 
+commands = require './commands'
+
 app = express()
 server = http.Server(app)
 app.set 'views', path.resolve __dirname, '../public'
@@ -68,6 +70,11 @@ app.get /module\/.*/, (req, res, next) ->
     return next err if err
     srcmd = md.render content
     res.render 'module.jade', title: 'Express', srcmd: srcmd
+
+app.get '/command/:command.json', (req, res, next) ->
+  commands req.params.command, (err, data) ->
+    return next err if err
+    res.json data
 
 app.use serve_static path.resolve __dirname, '../public'
 
@@ -134,6 +141,7 @@ app.use serve_index path.resolve __dirname, '../public'
 app.use (err, req, res, next) ->
   code = if typeof err.code is 'number' then err.code else 500
   code = 404 if err.code is 'ENOENT'
+  console.log err
   res.status(code).render 'error.jade', error: err
 
 server.listen params.port

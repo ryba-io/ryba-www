@@ -1,0 +1,56 @@
+worker1.ryba        Bootstrap # Connection                  OK                  129ms
+front1.ryba         Bootstrap # Connection                  OK                  135ms
+master2.ryba        Bootstrap # Connection                  OK                  143ms
+worker2.ryba        Bootstrap # Connection                  OK                  153ms
+master3.ryba        Bootstrap # Connection                  OK                  164ms
+master1.ryba        Bootstrap # Connection                  OK                  181ms
+front1.ryba         Bootstrap # Disk Info                   OK                  28ms
+worker1.ryba        Bootstrap # Disk Info                   OK                  31ms
+master2.ryba        Bootstrap # Disk Info                   OK                  27ms
+worker2.ryba        Bootstrap # Disk Info                   OK                  22ms
+front1.ryba         Bootstrap # CPU Info                    OK                  18ms
+worker1.ryba        Bootstrap # CPU Info                    OK                  23ms
+master1.ryba        Bootstrap # Disk Info                   OK                  24ms
+master2.ryba        Bootstrap # CPU Info                    OK                  23ms
+worker2.ryba        Bootstrap # CPU Info                    OK                  22ms
+front1.ryba         Bootstrap # Mem Info                    OK                  19ms
+master2.ryba        Bootstrap # Mem Info                    OK                  82ms
+master3.ryba        Bootstrap # Disk Info                   OK                  103ms
+master1.ryba        Bootstrap # CPU Info                    OK                  87ms
+worker1.ryba        Bootstrap # Mem Info                    OK                  92ms
+worker2.ryba        Bootstrap # Mem Info                    OK                  96ms
+master3.ryba        Bootstrap # CPU Info                    OK                  35ms
+master1.ryba        Bootstrap # Mem Info                    OK                  36ms
+front1.ryba         Falcon # Status Service                 STOPPED             45ms
+master3.ryba        Bootstrap # Mem Info                    OK                  30ms
+master1.ryba        Kerberos Server # Status kadmin         STARTED             55ms
+master2.ryba        ZooKeeper Server # Status               STARTED             94ms
+worker1.ryba        HDFS DN # Status                        STARTED             104ms
+worker2.ryba        HDFS DN # Status                        STARTED             114ms
+master3.ryba        HTTPD # Status                          STARTED             79ms
+master1.ryba        Kerberos Server # Status krb5kdc        STARTED             57ms
+master3.ryba        Kerberos Server # Status kadmin         STARTED             45ms
+master2.ryba        HDFS JN # Status                        STARTED             123ms
+worker2.ryba        Hadoop NodeManager # Status             STARTED             77ms
+worker1.ryba        Hadoop NodeManager # Status             STARTED             93ms
+master3.ryba        Kerberos Server # Status krb5kdc        STARTED             50ms
+master1.ryba        ZooKeeper Server # Status               STARTED             97ms
+worker1.ryba        HBase RegionServer # Status             STARTED             82ms
+worker2.ryba        HBase RegionServer # Status             STARTED             95ms
+master2.ryba        ZKFC # Status                           STARTED             121ms
+master1.ryba        HDFS JN # Status                        STARTED             103ms
+master3.ryba        ZooKeeper Server # Status               STARTED             139ms
+master2.ryba        HDFS NN # Status                        STARTED             86ms
+master1.ryba        ZKFC # Status                           STARTED             80ms
+master3.ryba        HDFS JN # Status                        STARTED             96ms
+master1.ryba        HDFS NN # Status                        STARTED             80ms
+master2.ryba        MapReduce JHS # Status                  STARTED             86ms
+master3.ryba        Hive HCatalog # Status                  STARTED             78ms
+master2.ryba        Yarn RM # Status                        STARTED             49ms
+master1.ryba        Kafka Server # Status                   STARTED             59ms
+master2.ryba        Kafka Server # Status                   STARTED             63ms
+master3.ryba        Hive Server2 # Status                   STARTED             75ms
+master3.ryba        WebHCat # Status                        STARTED             79ms
+master3.ryba        HBase Rest # Status                     STARTED             79ms
+master3.ryba        Oozie Server # Status                   STARTED             21ms
+master3.ryba        Hue # Status                            STARTED             31ms

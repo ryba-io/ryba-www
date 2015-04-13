@@ -1,0 +1,93 @@
+worker2.ryba        Bootstrap # Connection                  OK                  130ms
+front1.ryba         Bootstrap # Connection                  OK                  141ms
+master1.ryba        Bootstrap # Connection                  OK                  156ms
+master3.ryba        Bootstrap # Connection                  OK                  166ms
+master2.ryba        Bootstrap # Connection                  OK                  178ms
+worker1.ryba        Bootstrap # Connection                  OK                  216ms
+master3.ryba        Bootstrap # Disk Info                   OK                  42ms
+master3.ryba        Bootstrap # CPU Info                    OK                  22ms
+front1.ryba         Ganglia Monitor # Stop                  STOPPED             164ms
+master3.ryba        Bootstrap # Mem Info                    OK                  23ms
+master1.ryba        Ganglia Monitor # Stop                  STOPPED             362ms
+worker2.ryba        Ganglia Monitor # Stop                  STOPPED             374ms
+front1.ryba         Bootstrap # Disk Info                   OK                  26ms
+master1.ryba        Bootstrap # Disk Info                   OK                  25ms
+worker2.ryba        Bootstrap # Disk Info                   OK                  21ms
+front1.ryba         Bootstrap # CPU Info                    OK                  22ms
+master1.ryba        Bootstrap # CPU Info                    OK                  19ms
+front1.ryba         Bootstrap # Mem Info                    OK                  18ms
+worker2.ryba        Bootstrap # CPU Info                    OK                  25ms
+master1.ryba        Bootstrap # Mem Info                    OK                  18ms
+worker2.ryba        Bootstrap # Mem Info                    OK                  22ms
+master2.ryba        Ganglia Monitor # Stop                  STOPPED             442ms
+master2.ryba        Bootstrap # Disk Info                   OK                  25ms
+master2.ryba        Bootstrap # CPU Info                    OK                  17ms
+worker1.ryba        Ganglia Monitor # Stop                  STOPPED             480ms
+master2.ryba        Bootstrap # Mem Info                    OK                  20ms
+worker1.ryba        Bootstrap # Disk Info                   OK                  22ms
+worker1.ryba        Bootstrap # CPU Info                    OK                  19ms
+worker1.ryba        Bootstrap # Mem Info                    OK                  19ms
+master3.ryba        Nagios # Stop                           STOPPED             1.183s
+master3.ryba        Nagios # Stop Clean Logs                OK                  19ms
+master1.ryba        Kafka Server # Stop                     STOPPED             1.167s
+master2.ryba        Kafka Server # Stop                     STOPPED             1.732s
+master3.ryba        HTTPD # Stop                            MODIFIED            1.258s
+worker1.ryba        HBase RegionServer # Stop               STOPPED             2.201s
+worker1.ryba        HBase RegionServer # Stop Clean Logs    CLEANED             39ms
+master3.ryba        Ganglia Monitor # Stop                  STOPPED             309ms
+front1.ryba         Falcon # Stop Service                   STOPPED             3.264s
+front1.ryba         Falcon # Stop Clean Logs                TODO                0ms
+worker2.ryba        HBase RegionServer # Stop               STOPPED             3.259s
+worker2.ryba        HBase RegionServer # Stop Clean Logs    CLEANED             42ms
+master1.ryba        HBase Master # Stop                     STOPPED             4.258s
+master1.ryba        HBase Master # Stop Clean Logs          CLEANED             95ms
+master2.ryba        Yarn RM # Stop Server                   STOPPED             5.206s
+master2.ryba        Yarn RM # Stop Clean Logs               OK                  14ms
+worker1.ryba        Hadoop NodeManager # Stop Server        STOPPED             5.212s
+worker1.ryba        Hadoop NodeManager # Stop Clean Logs    OK                  17ms
+master3.ryba        Ganglia Collector # Stop                STOPPED             5.208s
+master3.ryba        Hue # Stop                              STOPPED             121ms
+master3.ryba        Hue # Stop Clean Logs                   CLEANED             17ms
+worker2.ryba        Hadoop NodeManager # Stop Server        STOPPED             5.209s
+worker2.ryba        Hadoop NodeManager # Stop Clean Logs    OK                  15ms
+master1.ryba        HDFS NN # Stop                          STOPPED             5.828s
+master1.ryba        HDFS NN # Stop Clean Logs               CLEANED             25ms
+master2.ryba        MapReduce JHS # Stop                    STOPPED             5.21s
+worker1.ryba        HDFS DN # Stop Service                  STOPPED             5.113s
+worker1.ryba        HDFS DN # Stop Clean Logs               CLEANED             13ms
+worker2.ryba        HDFS DN # Stop Service                  STOPPED             5.116s
+worker2.ryba        HDFS DN # Stop Clean Logs               CLEANED             14ms
+master3.ryba        Oozie Server # Stop                     STOPPED             8.477s
+master3.ryba        Oozie Server # Stop Clean Logs          CLEANED             22ms
+master1.ryba        ZKFC # Stop                             STOPPED             5.169s
+master1.ryba        ZKFC # Stop Clean Logs                  OK                  16ms
+master2.ryba        HDFS NN # Stop                          STOPPED             5.193s
+master2.ryba        HDFS NN # Stop Clean Logs               CLEANED             24ms
+master1.ryba        HDFS JN # Stop                          STOPPED             5.14s
+master1.ryba        HDFS JN # Stop Clean Logs               CLEANED             11ms
+master3.ryba        HBase Rest # Stop                       STOPPED             5.222s
+master3.ryba        HBase Rest # Stop Clean Logs            CLEANED             26ms
+master1.ryba        ZooKeeper Server # Stop                 STOPPED             106ms
+master1.ryba        Oozie Server # Stop Clean Logs          CLEANED             15ms
+master1.ryba        Kerberos Server # Stop kadmin           MODIFIED            162ms
+master1.ryba        Kerberos Server # Stop krb5kdc          MODIFIED            156ms
+master2.ryba        ZKFC # Stop                             STOPPED             5.143s
+master2.ryba        ZKFC # Stop Clean Logs                  OK                  12ms
+master2.ryba        HDFS JN # Stop                          STOPPED             5.137s
+master2.ryba        HDFS JN # Stop Clean Logs               CLEANED             12ms
+master2.ryba        ZooKeeper Server # Stop                 STOPPED             112ms
+master2.ryba        Oozie Server # Stop Clean Logs          CLEANED             13ms
+master3.ryba        WebHCat # Stop                          STOPPED             10.245s
+master3.ryba        WebHCat # Stop Clean Logs               CLEANED             25ms
+master3.ryba        Hive & Server2 # Stop                   STOPPED             3.353s
+master3.ryba        Hive & HCat # Stop Clean Logs           OK                  13ms
+master3.ryba        Hive HCatalog # Stop Hive Metastore     STOPPED             30.136s
+master3.ryba        Hive HCatalog # Stop Clean Logs         CLEANED             12ms
+master3.ryba        HDFS JN # Stop                          STOPPED             5.146s
+master3.ryba        HDFS JN # Stop Clean Logs               CLEANED             13ms
+master3.ryba        ZooKeeper Server # Stop                 STOPPED             96ms
+master3.ryba        Oozie Server # Stop Clean Logs          CLEANED             11ms
+master3.ryba        Kerberos Server # Stop kadmin           MODIFIED            167ms
+master3.ryba        Kerberos Server # Stop krb5kdc          MODIFIED            156ms
+master3.ryba        OpenLDAP Server # Stop                  MODIFIED            163ms
+master3.ryba        Bind Server # Stop                      MODIFIED            2.131s

@@ -5,7 +5,8 @@ nanoscroller = require 'nanoscroller/bin/javascripts/jquery.nanoscroller.js'
 
 $ ->
   $anim = $('.anim')
-  $anim.find('.output .nano').nanoScroller();
+  $nano = $anim.find('.output .nano')
+  $content = $anim.find('.nano-content')
   $commands = $anim.find('.commands')
   $commands_a = $commands.children('a')
   $commands_a_active =  $commands.children('a.active')
@@ -15,4 +16,13 @@ $ ->
     $commands_a_active.removeClass 'active'
     $commands_a_active = $(@)
     $commands_a_active.addClass 'active'
-    console.log 'click'
+    command = $(@).text().toLowerCase()
+    $.getJSON "/command/#{command}.json", (data) ->
+      html = []
+      for line in data
+        html.push "<tr><td>#{line.host}</td><td>#{line.label}</td><td class='status'>#{line.status}</td><td>#{line.time}</td></tr>"
+      html = "<table>#{html.join ''}</table>"
+      $content.html html
+      $nano.nanoScroller(scroll: 'bottom')
+  $commands_a.first().trigger 'click'
+      
