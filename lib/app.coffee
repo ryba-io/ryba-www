@@ -73,13 +73,15 @@ app.use serve_static path.resolve __dirname, '../public'
 
 app.get '/documentation/:page', (req, res, next) ->
   filename = req.params.page.split('/').slice(0)
+  title = "#{filename}"
+  title = "#{title.charAt(0).toUpperCase()}#{title.slice 1}"
   filename = "#{filename}.md"
   filename = "#{path.join __dirname, '/../public/documentation/docs/',filename}"
   fs.readFile filename, 'utf8', (err, content) ->
     return next err if err
     try
       html = md.render content
-      res.render 'documentation/documentation.jade',  title: 'Documentation', srcmd: html
+      res.render 'documentation/documentation.jade',  title: "#{title} - Ryba's Documentation", srcmd: html
     catch err
       fn err
     return
