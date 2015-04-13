@@ -1,55 +1,50 @@
 
-require '../css/toc.styl'
+# .ui.close.right.rail
+#   .ui.sticky.fixed.top
+#     .ui.secondary.vertical.following.fluid.menu
+#       .item
+#         a.active.title
+#           i.dropdown.icon(tabindex=0)
+#           b ryba/hbase/regionserver/install
+#         .active.content.menu
+#             //- a.item(href="") HBase RegionServer Install
+#             a.item(href="#iptables") IPTables
+#             a.item(href="#service") Service
+#             a.item(href="#zookeeper-jaas") Zookeeper JAAS
+#             a.item(href="#configure") Configure
+#             a.item(href="#opts") Opts
+#             a.item(href="#metrics") Metrics
+#             a.item(href="#spnego") SPNEGO
+#             a.item(href="#start") Start
+#             a.item(href="#check") Check
+  
+  
 React = require 'react'
+require './Toc.styl'
 
-hash = (s) ->
-  s.split("").reduce (a,b) ->
-    a = ((a<<5)-a) + b.charCodeAt(0)
-    a&a
-  , 0              
-
-keys = {}
-gkeys = {}
-
-ModuleItem = React.createClass
+Section = React.createClass
   render: ->
-    url = "/module/#{@props.module.name}"
-    <div className="item">
-      <a href={url} className="ui inverted small header">{this.props.module.title}</a>
-    </div>
+    console.log '??', this.props
+    anchor = '#'+this.props.anchor
+    <a className="item" href="#{anchor}">{this.props.title}</a>
 
-ModuleGroup = React.createClass
+Commands = React.createClass
   render: ->
-    items = for module in @props.group.modules
-      <ModuleItem key={module.name} module={module} />
-    <div className="item">
-      <i className="home icon" />
-      <a href="" className="ui small inverted header">{this.props.group.name}</a>
-      <div className="modules menu">
-      {items}
-      </div>
-    </div>
-
-Toc = React.createClass
-  render: ->
-    groups = {}
-    items = for name, module of @props.data
-      group = if module.index then name else name.split('/').slice(0,-1).join('/')
-      groups[group] ?= []
-      groups[group].push module
-    groups = for name, modules of groups
-      continue if modules.length is 0
-      group = name: name, modules: modules
-      <ModuleGroup key={group.name} group={group} />
-    <div className="toc ui left vertical inverted sidebar menu uncover">
-      <div className="ui fluid search loading item">
-        <div className="ui icon input">
-          <input className="prompt" placeholder="Filter..." type="text" />
-          <i className="search icon" />
+    sections = for section in this.props.sections
+      console.log section.anchor
+      <Section key={section.anchor} anchor={section.anchor} title={section.title} />
+    <div className="ui close right rail">
+      <div className="ui sticky fixed top">
+        <div className="ui secondary vertical following fluid menu">
+          <div className="item">
+            <a className="title"><b>{this.props.title}</b></a>
+            <div className="content menu">
+              {sections}
+            </div>
+          </div>
         </div>
       </div>
-      <a className="item"><i className="home icon" /><span className="text">Home</span></a>
-      {groups}
     </div>
-  
-module.exports = Toc
+
+
+module.exports = Commands

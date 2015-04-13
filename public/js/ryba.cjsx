@@ -1,23 +1,19 @@
 
-require('../css/ryba.styl')
-# require('../../semantic/src/semantic.less')
+require('./ryba.styl')
 require 'semantic-ui/dist/semantic.css'
 require('semantic-ui/src/definitions/behaviors/visibility.js')
-require('semantic-ui/src/definitions/modules/accordion.js')
 require('semantic-ui/src/definitions/modules/dropdown.js')
 require('semantic-ui/src/definitions/modules/search.js')
 require('semantic-ui/src/definitions/modules/sidebar.js')
 require('semantic-ui/src/definitions/modules/sticky.js')
 require('semantic-ui/src/definitions/modules/transition.js')
-# require('semantic-ui/src/definitions/modules/accordion.less');
-# console.log require('imports?jQuery=jquery!../vendors/semantic-ui/dist/semantic.js')
-# require('../node_modules/semantic-ui/dist/semantic.js')
+
 $ = require('jquery')
 React = require('react')
 Commands = require('./Commands.cjsx')
+Sitemap = require('./Sitemap.cjsx')
 Toc = require('./Toc.cjsx')
 require('./content.coffee')
-Documentation = require('./Documentation.cjsx')
 
 if module.hot
   module.hot.accept ->
@@ -25,30 +21,49 @@ if module.hot
 
 $().ready ->
   $content = $('.main.content.container')
-  $section_headers = $content.children('h2')
-  $follow_menu = $('#content .following.menu')
+  $content_h1 = $content.children('h1')
+  $content_h2 = $content.children('h2')
 
   $('#launch').click ->
-    $tok = $('.left')
-    $tok.sidebar('toggle')
-
-
+    $sitemap = $('.left')
+    $sitemap.sidebar('toggle')
   
-  $section_headers
+  # Set anchor
+  $content_h2
   .each (i, block) ->
-    $h2 = $(@)
-    text = $h2.text().replace(' ', '-').toLowerCase()
-    $h2.before("<a id='#{text}' class='anchor'></a>")
+    text = $(@).text().replace(/\s+/g, '-').toLowerCase()
+    $(@).before("<a id='#{text}' class='anchor'></a>")
+  # Style tables
   $content.find('table').addClass 'ui striped table'
+
+  title = $content_h1.text()
+  sections = []
+  $content_h2
+  .each (i, block) ->
+    text = $(@).text()
+    anchor = text.replace(/\s+/g, '-').toLowerCase()
+    sections.push anchor: anchor, title: text
+  React.render <Toc title={title} sections={sections} />, $content.prepend('<div/>').children().get(0)
+  $content.prepend $content.children().first().children().first()
+  $sticky = $('.ui.sticky')
+  $sticky.sticky
+    # context: '#content .ui.page'
+    context: $content
+    offset: 50 # When in fixed position, the margin-top style
+    # bottomOffset: 0
+    pushing: true
+  $sticky.sticky 'refresh'
 
   menu_toggle = ->
     $section = $(@)
-    index = $section_headers.index $section
+    $follow_menu = $('#content .following.menu')
+    index = $content_h2.index $section
+    console.log 'menu toggle', index
     $followSection = $follow_menu.find '.menu > .item'
     $activeSection = $followSection.eq index
     $followSection.removeClass 'active'
     $activeSection.addClass 'active'
-  $section_headers.visibility
+  $content_h2.visibility
     once: false
     offset: 160 # Related to the content h2 position, not exactly sure what 160 stands for
     # onTopVisible: handler.activate.accordion
@@ -59,7 +74,7 @@ $().ready ->
     # onTopPassed: -> console.log 'onTopPassed', arguments
     # # onTopPassed: ->
     # #   $section = $(@)
-    # #   index = $section_headers.index $section
+    # #   index = $content_h2.index $section
     # #   $followSection = $follow_menu.children '.menu > .item'
     # #   $activeSection = $followSection.eq index
     # #   $followSection.removeClass 'active'
@@ -72,41 +87,34 @@ $().ready ->
   $('.label.code').click ->
     $(@).next().toggle()
 
+  # Resize header on scroll
   $( window ).scroll (e) ->
     ph = $('#header .item.intro p').outerHeight(true)
     wt = $(window).scrollTop()
-    # console.log ph, wt, ph * 4 - wt, Math.round ph - wt, $('#header').css 'top'
     top = if wt / 2 > ph then (Math.max ph, ph - wt / 2) else wt / 2
+    ltop = -50 # Origin top value for logo img
     $('#header')
     .css 'top', - top
-    $('#header .item.logo img')
+    $('#header .logo img')
     .width("#{Math.ceil 100 - 50 * top / ph}%")
-    .css 'top', Math.floor -30 + top * (-30 - 10) / (0 - ph)
+    .css 'top', Math.floor ltop + top * (ltop - 10) / (0 - ph)
 
+  # Move header from markdown to correct node
   $title_container = $('.main.title .container .segment')
-  $content_container = $('.main.content.container')
+  $content_h1.addClass('ui header').appendTo($title_container.eq 0)
 
-  $content.children('h1').addClass('ui header').appendTo($title_container.eq 0)
-
-  $sticky = $('.ui.sticky')
-  $sticky.sticky
-    # context: '#content .ui.page'
-    context: $content_container
-    offset: 50
-    # bottomOffset: 0
-    pushing: true
-  $sticky.sticky 'refresh'
   
   
   $.getJSON '/modules.json', (data) ->
-    React.render <Toc data={data.by_name} />, $('.toc').get(0)
+    # Render sitemap
+    React.render <Sitemap data={data.by_name} />, $('.sitemap').get(0)
+    # Render commands
     name = /\/module\/(.*?)(\.html|\/*)$/.exec(window.location.pathname)?[1]
-    console.log name
     return unless name
     React.render <Commands commands={data.commands} name={name} />, $('.commands').get(0)
 
   $search = $('.ui.search')
-  $search_items = $('.toc div.item')
+  $search_items = $('.sitemap div.item')
   
   search_items = []
   $search_items.children('.header')
