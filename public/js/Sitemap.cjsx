@@ -22,8 +22,8 @@ ModuleGroup = React.createClass
   render: ->
     items = for module in @props.group.modules
       <ModuleItem key={module.name} module={module} />
+    # <i className="home icon" />
     <div className="item">
-      <i className="home icon" />
       <a href="" className="ui small inverted header">{this.props.group.name}</a>
       <div className="modules menu">
       {items}
@@ -41,15 +41,39 @@ Sitemap = React.createClass
       continue if modules.length is 0
       group = name: name, modules: modules
       <ModuleGroup key={group.name} group={group} />
+    # <div className="ui fluid search loading item">
+    #   <div className="ui icon input">
+    #     <input className="prompt" placeholder="Filter..." type="text" />
+    #     <i className="search icon" />
+    #   </div>
+    # </div>
     <div className="sitemap ui left vertical inverted sidebar menu uncover">
-      <div className="ui fluid search loading item">
-        <div className="ui icon input">
-          <input className="prompt" placeholder="Filter..." type="text" />
-          <i className="search icon" />
+      <a className="item" href="/"><i className="home icon" /><span className="text">Home</span></a>
+      <div className="item">
+        <i className="student icon" />
+        <span className="ui inverted header">Quick Start</span>
+        <div className="menu">
+          <a className="item" href="/documentation/introduction">What is ryba</a>
+          <a className="item" href="/documentation/getting_started">Getting Started</a>
         </div>
       </div>
-      <a className="item"><i className="home icon" /><span className="text">Home</span></a>
       {groups}
     </div>
-  
+    # <div className="item">
+    #   <i className="home icon" />
+    #   <span className="ui inverted header">Developer’s Guide</span>
+    #   <div className="menu">
+    #     <a className="item" href="/documentation/internal">Understand the Internal</a>
+    #     <a className="item" href="/documentation/middleware">Write your middleware</a>
+    #   </div>
+    # </div>
+    # <div className="item">
+    #   <i className="home icon" />
+    #   <span className="ui inverted header">Contributor’s Guide</span>
+    #   <div className="menu">
+    #     <a className="item" href="/documentation/contribute">How to contribute</a>
+    #     <a className="item" href="/documentation/dev_setup">Development setup</a>
+    #   </div>
+    # </div>
+
 module.exports = Sitemap

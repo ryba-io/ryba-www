@@ -83,7 +83,7 @@ app.get '/documentation/:page', (req, res, next) ->
   title = "#{filename}"
   title = "#{title.charAt(0).toUpperCase()}#{title.slice 1}"
   filename = "#{filename}.md"
-  filename = "#{path.join __dirname, '/../public/documentation/docs/',filename}"
+  filename = "#{path.join __dirname, '/../public/documentation/',filename}"
   fs.readFile filename, 'utf8', (err, content) ->
     return next err if err
     try

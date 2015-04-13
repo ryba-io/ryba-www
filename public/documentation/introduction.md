@@ -23,7 +23,7 @@ with sudo access.
 -   Use secured comminication with SSH
 -   No database used, full distribution across multiple servers relying on GIT
 -   No agent or pre-installation required on your cluster nodes
--   Version control all your configuration and modifications (using GIT by default)
+-   Version control all your configuration and modifications with GIT and NPM, the Node.js Package Manager
 -   Command-based to integrate with your [Business Continuity Plan (BCP)][bcp] and existing scripts
 -   For developer, as simple as learning Node.js and not a new framework
 -   Self-documented code written in [Literate CoffeeScript ][literate]
@@ -42,5 +42,11 @@ with sudo access.
 -   Check the running components
 -   Provide convenient utilities such as global start/stop/status commands, 
     distributed shell execution, ...
-
-
+    
+[oss]: http://en.wikipedia.org/wiki/Open-source_software
+[npm]: https://www.npmjs.org/
+[masson]: https://github.com/wdavidw/node-masson
+[license]: https://github.com/wdavidw/ryba/blob/master/LICENSE.md
+[hdfs_nn]: https://github.com/wdavidw/ryba/blob/master/hadoop/hdfs_nn.coffee.md
+[bcp]: http://en.wikipedia.org/wiki/Business_continuity_planning
+[literate]: http://coffeescript.org/#literate
