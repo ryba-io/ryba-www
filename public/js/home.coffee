@@ -23,6 +23,16 @@ $ ->
         html.push "<tr><td>#{line.host}</td><td>#{line.label}</td><td class='status'>#{line.status}</td><td>#{line.time}</td></tr>"
       html = "<table>#{html.join ''}</table>"
       $content.html html
-      $nano.nanoScroller(scroll: 'bottom')
+      # $nano.nanoScroller(scroll: 'bottom')
+      $td = $content.find('td')
+      $content.scrollTop 0
+      start = ->
+        $anim = $content.stop().animate
+          'scrollTop': $td.last().get(0).offsetTop
+        , $td.size()*100, 'linear'
+      $content.mouseenter ->
+        $anim.stop()
+      $content.mouseleave ->
+        start()
+      start()
   $commands_a.first().trigger 'click'
-      
