@@ -3,7 +3,7 @@ webpack = require('webpack');
 
 module.exports = {
   context: __dirname + "/public",
-  entry: ['webpack/hot/dev-server', './js/ryba.cjsx'],
+  entry: ['./js/ryba.cjsx'],
   // entry: ['webpack/hot/dev-server', './js/test.js'],
   output: {
     publicPath: 'http://localhost:8080/',
@@ -36,3 +36,7 @@ module.exports = {
     ]
   }
 };
+
+if(process.env['RYBA_DEV']){
+  module.exports.entry.unshift('webpack/hot/dev-server');
+}
