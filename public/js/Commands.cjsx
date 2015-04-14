@@ -33,9 +33,7 @@ Commands = React.createClass
           innername = name+'/'+innernames.slice(0, j).join('_')
           commands = @props.commands[innername]
           break if commands
-    # console.log commands
     commands = for command, modules of commands
-      # console.log commands
       <Command key={command} command={command} modules={modules} />
     <div className="ui selection dropdown">
       <input name="" type="hidden" />
@@ -46,7 +44,6 @@ Commands = React.createClass
       </div>
     </div>
   componentDidMount: ->
-    # console.log 'ready', $(this.getDOMNode()).find('.dropdown').get(0)
     $(this.getDOMNode()).dropdown
       transition: 'drop'
 

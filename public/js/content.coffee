@@ -21,6 +21,5 @@ $ ->
   .wrap( "<div class='content'></div>" )
   .children('code')
   .each (i, block) ->
-    console.log 'hightlight code'
     hljs.highlightBlock block
     $(@).closest('.ui.accordion').accordion()

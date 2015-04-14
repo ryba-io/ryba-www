@@ -24,14 +24,12 @@ require './Toc.styl'
 
 Section = React.createClass
   render: ->
-    console.log '??', this.props
     anchor = '#'+this.props.anchor
     <a className="item" href="#{anchor}">{this.props.title}</a>
 
 Commands = React.createClass
   render: ->
     sections = for section in this.props.sections
-      console.log section.anchor
       <Section key={section.anchor} anchor={section.anchor} title={section.title} />
     <div className="ui close right rail">
       <div className="ui sticky fixed top">
