@@ -45,22 +45,22 @@ $().ready ->
     text = $(@).text()
     anchor = text.replace(/\s+/g, '-').toLowerCase()
     sections.push anchor: anchor, title: text
-  React.render <Toc title={title} sections={sections} />, $content.prepend('<div/>').children().get(0)
-  $content.prepend $content.children().first().children().first()
-  $sticky = $('.ui.sticky')
-  $sticky.sticky
-    # context: '#content .ui.page'
-    context: $content
-    offset: 50 # When in fixed position, the margin-top style
-    # bottomOffset: 0
-    pushing: true
-  $sticky.sticky 'refresh'
+  unless $content_h1.hasClass 'no_toc'
+    React.render <Toc title={title} sections={sections} />, $content.prepend('<div/>').children().get(0)
+    $content.prepend $content.children().first().children().first()
+    $sticky = $('.ui.sticky')
+    $sticky.sticky
+      # context: '#content .ui.page'
+      context: $content
+      offset: 50 # When in fixed position, the margin-top style
+      # bottomOffset: 0
+      pushing: true
+    $sticky.sticky 'refresh'
 
   menu_toggle = ->
     $section = $(@)
     $follow_menu = $('#content .following.menu')
     index = $content_h2.index $section
-    console.log 'menu toggle', index
     $followSection = $follow_menu.find '.menu > .item'
     $activeSection = $followSection.eq index
     $followSection.removeClass 'active'
