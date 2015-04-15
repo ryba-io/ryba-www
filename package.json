@@ -31,7 +31,6 @@
   "dependencies": {
     "better-console": "^0.2.4",
     "body-parser": "~1.12.2",
-    "bower": "~1",
     "cheerio": "0.19.0",
     "coffee-jsx-loader": "^0.1.0",
     "coffee-loader": "^0.7.2",
@@ -83,7 +82,6 @@
     "nanoscroller": "^0.8.6",
     "nib": "^1.1.0",
     "parameters": "0.1.4",
-    "preen": "~1.2.0",
     "react": "^0.13.1",
     "remarkable": "^1.6.0",
     "require-dot-file": "^0.4.0",
