@@ -101,10 +101,10 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "postinstall": "node node_modules/bower/bin/bower install && ./node_modules/.bin/preen",
+    "build_assets": "node_modules/.bin/webpack -p --config webpack.config.js",
     "dev_app": "export RYBA_DEV=1; ./bin/app -p 3000",
-    "dev_assets": "./node_modules/.bin/webpack-dev-server --devtool eval --hot --progress --colors --content-base build --public-path http://localhost:8080/",
-    "prod_app": "./bin/app -p 80",
-    "prod_assets": "./node_modules/.bin/webpack-dev-server --devtool eval --progress --colors --content-base build --public-path http://localhost:8080/"
+    "dev_assets": "node_modules/.bin/webpack-dev-server --devtool eval --hot --progress --colors --content-base build --public-path http://localhost:8080/",
+    "prod_app": "bin/app -p 80",
+    "prod_assets": "node_modules/.bin/webpack-dev-server --devtool eval --progress --colors --content-base build --public-path http://localhost:8080/"
   }
 }
