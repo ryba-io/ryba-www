@@ -50,7 +50,7 @@ app.use jade_static
   serveIndex: true
   jade: pretty: true
 
-app.use serve_static path.resolve __dirname, '../public'
+app.use serve_static path.resolve __dirname, '../src'
 
 remarkable = require 'remarkable'
 md = new remarkable 'full'
