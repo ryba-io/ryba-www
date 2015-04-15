@@ -10,7 +10,9 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
     if process.env['RYBA_DEV']
       script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
-    script(type='text/javascript', src='http://localhost:8080/bundle.js')
+      script(type='text/javascript', src='http://localhost:8080/bundle.js')
+    else
+      script(type='text/javascript', src='/build/bundle.js')
   body#ryba.pushable
     .sitemap
     #launch.ui.attached.right.black.fixed.button

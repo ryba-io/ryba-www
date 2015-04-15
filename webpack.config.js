@@ -7,7 +7,7 @@ module.exports = {
   // entry: ['webpack/hot/dev-server', './js/test.js'],
   output: {
     publicPath: 'http://localhost:8080/',
-    path: __dirname + '/public',
+    path: __dirname + '/public/build',
     filename: 'bundle.js'
   },
   plugins: [
