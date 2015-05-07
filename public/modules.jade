@@ -2,12 +2,25 @@
 extends ./layout.jade
 
 block content
-  h1 hello
-  each module in modules
-    if module.index
-      .ui.divider
-      h2.ui.header= module.name
-    else
-      h3= module.name
-    if module.description
-      p!= module.description
+  h1 
+    |hello
+  div.ui.list
+    each module in modules
+      if module.index
+        .ui.divider.item
+          .ui.content
+            h2.ui.header= module.title
+                .list
+        if module.description
+          .description.module
+            != module.description
+      else
+        if module.title
+        .item
+          i.right.triangle.icon
+          .content
+            a.header(href=module.href)
+              !=module.title
+            if module.description
+              .description
+                != module.description

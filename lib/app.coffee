@@ -100,7 +100,7 @@ app.get '/', (req, res) ->
 app.get '/modules', (req, res) ->
   modules = for name in Object.keys(req.modules.by_name).sort()
     mod = req.modules.by_name[name]
-    name: mod.name, title: mod.title, description: mod.description, index: mod.index or false
+    name: mod.name, title: mod.title, description: mod.description, index: mod.index or false, href: mod.href
   res.render 'modules.jade', modules: modules
   
 app.get '/documentation',  (req, res)  ->

@@ -70,6 +70,7 @@ exports.modules = (options, callback) ->
           filename = path.dirname filename
           module.index = true
         module.name = filename
+        module.href = "/module/#{filename}"
         modules.filename_to_name[module.filename] = module.name
         modules.by_name[module.name] = module
         # Find commands
