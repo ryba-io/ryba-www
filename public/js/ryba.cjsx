@@ -24,7 +24,7 @@ if module.hot
 $().ready ->
   $content = $('.main.content.container')
   $content_h1 = $content.children('h1')
-  $content_h2 = $content.children('h2')
+  $content_h2 = $('h2')
 
   $('#launch').click ->
     $sitemap = $('.left')
