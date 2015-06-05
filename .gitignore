@@ -9,3 +9,4 @@ src/files/vendor/components-bootstrap
 src/files/vendor/jquery
 .docpad.db
 !.gitignore
+/bower_components
