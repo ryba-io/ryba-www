@@ -1,16 +1,16 @@
-## Ryba                 
+## Ryba
 
 Ryba boostraps and manages a full secured Hadoop cluster with one command. This
 is an [Open-source software (OSS) project][oss] released under the
-[new BSD license][license] developed for one of the World largest utility
+[new BSD license][license] developed for one of the World's largest utility
 company. It is now operationnal.
 
-## Motivations 
+## Motivations
 
 Ryba is our answer to DevOps integration need for product delivery and quality
-testing. It provides the flexibilty to answer the demand of your internal 
+testing. It provides the flexibilty to answer the demand of your internal
 information technology (IT) operations team. It is written in JavaScript and
-CoffeeScript to facilitate and accelerate feature developments and maintenance 
+CoffeeScript to facilitate and accelerate feature developments and maintenance
 releases. The language encourages self-documented code, look by yourself the
 source code deploying two [HA namenodes][hdfs_nn].
 
@@ -26,7 +26,7 @@ with sudo access.
 -   Version control all your configuration and modifications with GIT and NPM, the Node.js Package Manager
 -   Command-based to integrate with your [Business Continuity Plan (BCP)][bcp] and existing scripts
 -   For developer, as simple as learning Node.js and not a new framework
--   Self-documented code written in [Literate CoffeeScript ][literate]
+-   Self-documented code written in [Literate CoffeeScript][literate]
 -   Idempotent and executable on a running cluster without any negative impact
 
 ##  Features
@@ -40,9 +40,9 @@ with sudo access.
 -   Integrate Kerberos with cross realm support
 -   Set IPTables rules and startup scripts
 -   Check the running components
--   Provide convenient utilities such as global start/stop/status commands, 
+-   Provide convenient utilities such as global start/stop/status commands,
     distributed shell execution, ...
-    
+
 [oss]: http://en.wikipedia.org/wiki/Open-source_software
 [npm]: https://www.npmjs.org/
 [masson]: https://github.com/wdavidw/node-masson
