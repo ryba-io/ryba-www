@@ -1,4 +1,3 @@
-
 path = require 'path'
 try
   parameters = require('./parameters')
@@ -27,9 +26,11 @@ serve_static = require 'serve-static'
 jade_static = require 'connect-jade-static'
 
 commands = require './commands'
+webpack = require './webpack_server'
 
 app = express()
 server = http.Server(app)
+
 app.set 'views', path.resolve __dirname, '../public'
 app.set 'view engine', params.engine
 app.use bodyParser.json()
@@ -37,8 +38,6 @@ app.use bodyParser.urlencoded()
 app.use cookieParser 'my secret'
 app.use methodOverride '_method'
 app.use session secret: 'my secret', resave: true, saveUninitialized: true
-
-
 
 modules = require './modules'
 app.use modules
@@ -50,7 +49,8 @@ app.use jade_static
   serveIndex: true
   jade: pretty: true
 
-app.use serve_static path.resolve __dirname, '../src'
+# Launch webpack dev middleware
+webpack(app)
 
 remarkable = require 'remarkable'
 md = new remarkable 'full'
@@ -92,7 +92,7 @@ app.get '/documentation/:page', (req, res, next) ->
     catch err
       fn err
     return
-  return 
+  return
 
 app.get '/', (req, res) ->
   res.render 'index.jade'
@@ -102,7 +102,7 @@ app.get '/modules', (req, res) ->
     mod = req.modules.by_name[name]
     name: mod.name, title: mod.title, description: mod.description, index: mod.index or false, href: mod.href
   res.render 'modules.jade', modules: modules
-  
+
 app.get '/documentation',  (req, res)  ->
   res.render 'documentation/index.jade', title: 'Getting Started'
 
@@ -141,10 +141,10 @@ app.use serve_index path.resolve __dirname, '../public'
 #   app.use errorhandler()
 
 app.use (err, req, res, next) ->
+  console.log 'error', err.code, err
   code = if typeof err.code is 'number' then err.code else 500
   code = 404 if err.code is 'ENOENT'
-  console.log err
   res.status(code).render 'error.jade', error: err
 
-server.listen params.port
+server.listen params.port, console.log 'running on port ' + params.port
 module.exports = server
