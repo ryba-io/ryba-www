@@ -13,6 +13,10 @@ stack = []
 modules = []
 error = null
 
+capitalize = (str) ->
+  str.replace /\w\S*/g, (txt) ->
+    txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+
 exports = module.exports = (req, res, next) ->
   if status is 1
     req.modules = modules
@@ -31,66 +35,69 @@ exports = module.exports = (req, res, next) ->
 
 ###
 modules =
-  by_filename: <filename: module>
+  by_filename: <filename: submodule>
   by_name: <name: module>
-  services: [see services]
-module = 
-  filename: '/abs/path/node_modules/package/path/to/module.coffee.md'
-  name: 'package/path/to/module'
-  title: 'Module Title'
-  index: true|false
-
-
+  full: [module with submodules]
+module =
+  name: 'Module name'
+  path: 'ryba/module'
+  logo: 'path/to/logo'
+  status: 'stable|preview|broken'
+  submodules: [
+    filename: 'ryba/path/to/index'
+    href: '/module/path'
+    index: true|false
+    title: 'Module Title'
+    description: 'Module description'
+    html: 'module page cntent'
+  ]
 ###
 
 exports.modules = (options, callback) ->
-  options = {}
-  options.search = [
-    "#{__dirname}/../node_modules/ryba/**/*.coffee.md"
-  ]
-  commands = {} # key: module name, value: list of commands
-  modules = {}
-  modules.filename_to_name = {}
-  modules.by_name = {}
-  each options.search
-  .run (search, next) ->
-    glob search, (err, filenames) ->
+  result =
+    by_name: {}
+    by_filename: {}
+    full: []
+  modules = require './module_list'
+
+  each modules
+  .run (mod, next) ->
+    result.by_name[mod.name] = mod
+    mod.submodules = []
+
+    glob "#{__dirname}/../node_modules/#{mod.path}/**/index.coffee.md", (err, filenames) ->
       return next err if err
-      # console.log filenames
+      
       each filenames
       .run (filename, next) ->
-        # # return next() if filename is path.basename filename, '.coffee.md'
         module = {}
+        filename = /^.*node_modules\/(.*)$/.exec(filename)[1] # Remove before node_modules in path
+        filename = /(.*?)\.[^/]*$/.exec(filename)[1] # Remove extension
         module.filename = filename
-        filename = /^.*node_modules\/(.*)$/.exec(filename)[1]
-        # console.log filename
-        # module.packagename = filename
-        filename = /(.*?)\.[^/]*$/.exec(filename)[1]
-        if 'index' is path.basename filename
-          filename = path.dirname filename
-          module.index = true
-        module.name = filename
         module.href = "/module/#{filename}"
-        modules.filename_to_name[module.filename] = module.name
-        modules.by_name[module.name] = module
-        # Find commands
-        middlewares = require module.filename
-        if Array.isArray middlewares
-          for middleware in middlewares
-            continue unless middleware.commands
-            commands[module.name] ?= {}
-            cmds = middleware.commands
-            cmds = [cmds] unless Array.isArray cmds
-            for cmd in cmds
-              commands[module.name][cmd] ?= {}
-              mods = middleware.modules
-              mods = [mods] unless Array.isArray mods
-              for mod in mods
-                commands[module.name][cmd][mod] ?= true
+
+        # Build module's name
+        if filename == "ryba/#{mod.name.toLowerCase()}/index"
+          module.index = true
+          module.name = "Base"
+        else # Build name from filename
+          module.index = false
+          name = filename.split('/')
+          name.splice 0, 1
+          name.splice -1, 1
+          module.name = capitalize name.join " "
+          if name.indexOf("tools") != -1 # For tools, set base as name
+            module.name = "Base"
+
+        # Add module to submodules list
+        if module.index
+          mod.submodules.unshift module
+        else mod.submodules.push module
+
         # Parse markdown
-        fs.readFile module.filename, 'utf8', (err, source) ->
+        fs.readFile "#{__dirname}/../node_modules/#{filename}.coffee.md", 'utf8', (err, source) ->
           return next err if err
-          module.source = source
+          # module.source = source
           html = md.render source
           module.html = html
           $ = cheerio.load html
@@ -98,61 +105,9 @@ exports.modules = (options, callback) ->
           $description = $title.next('p')
           module.title = $title.html()
           module.description = $description.html()
-          # console.log ''
-          # console.log module.title
-          # console.log module.description
           next()
+        result.by_filename[module.filename] = module
       .then next
   .then (err) ->
-    for name, cmds of commands
-      # commands[name] = []
-      for cmd, mods of cmds
-        commands[name][cmd] = []
-        for mod in Object.keys mods
-          commands[name][cmd].push mod
-    # console.log commands
-    modules.commands = commands
-    # for _, module of modules.by_name
-    #   # Find dependencies
-    #   middlewares = require module.filename
-    #   if Array.isArray middlewares
-    #     for middleware in middlewares
-    #       mods = middleware.modules
-    #       continue unless mods
-    #       mods = [mods] unless Array.isArray mods
-    # modules.services = exports.services modules
-    callback err, modules
-
-###
-Return an object similar to
-
-```json
-{
-  'ryba/zookeeper/server': {
-    check: [ 'ryba/zookeeper/server_check' ],
-    install: [
-      'ryba/zookeeper/server_install',
-      'ryba/zookeeper/server_start',
-      'ryba/zookeeper/server_check' ],
-     start: [ 'ryba/zookeeper/server_start' ],
-     status: [ 'ryba/zookeeper/server_status' ],
-     stop: [ 'ryba/zookeeper/server_stop' ] }
-  }
-}
-```
-###
-exports.services = (modules) ->
-  services = {}
-  for filename, meta of modules.by_filename
-    module = require filename
-    continue unless Array.isArray module
-    for middleware in module
-      commands = middleware.commands
-      commands = [commands] if typeof commands is 'string'
-      continue unless commands?.length
-      services[meta.name] ?= {}
-      for command in commands
-        modules = middleware.modules
-        modules = [modules] if typeof modules is 'string'
-        services[meta.name][command] = modules
-  services
+    result.full = modules
+    callback err, result

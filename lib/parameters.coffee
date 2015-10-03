@@ -14,4 +14,3 @@ module.exports = parameters
   #   description: 'Directory storing files to serve'
   #   required: true
   ]
-
