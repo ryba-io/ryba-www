@@ -3,24 +3,47 @@ extends ./layout.jade
 
 block content
   h1 
-    |hello
-  div.ui.list
+    |Ryba modules
+  //- div.ui.list.module-list
+  //-   each module in modules
+  //-     .ui.item.module
+  //-       .ui.content
+  //-         if module.logo
+  //-           img(src=module.logo)
+  //-         h2.ui.header=module.name
+  //-       each mod in module.submodules
+  //-         if mod.name
+  //-           .item
+  //-             i.right.triangle.icon
+  //-             .content
+  //-               a.header(href=mod.href)
+  //-                 !=mod.title
+  //-               if mod.description
+  //-                 .description
+  //-                   !=mod.description
+  //- 
+  div.ui.grid.module-list
     each module in modules
-      if module.index
-        .ui.divider.item
-          .ui.content
-            h2.ui.header= module.title
-                .list
-        if module.description
-          .description.module
-            != module.description
-      else
-        if module.title
-        .item
-          i.right.triangle.icon
-          .content
-            a.header(href=module.href)
-              !=module.title
-            if module.description
-              .description
-                != module.description
+      .ui.seven.wide.column.module
+        .ui.content.module-header
+          if module.logo
+            img(src=module.logo)
+          h2.ui.header=module.name
+            if module.status=="stable"
+              i.icon.checkmark
+            if module.status=="preview"
+              i.icon.warning
+            if module.status=="broken"
+              i.icon.remove
+        .ui.list
+          if module.submodules
+            each mod in module.submodules
+              if mod.name
+              .item
+                //- i.right.triangle.icon
+                .content
+                  a.header(href=mod.href)
+                    !=mod.title
+                  //- if mod.description
+                  //-   .description
+                  //-     !=mod.description

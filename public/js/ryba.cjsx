@@ -11,7 +11,7 @@ require('semantic-ui/src/definitions/modules/transition.js')
 
 $ = require('jquery')
 React = require('react')
-Commands = require('./Commands.cjsx')
+# Commands = require('./Commands.cjsx')
 Sitemap = require('./Sitemap.cjsx')
 Toc = require('./Toc.cjsx')
 require('./content.coffee')
@@ -29,7 +29,7 @@ $().ready ->
   $('#launch').click ->
     $sitemap = $('.left')
     $sitemap.sidebar('toggle')
-  
+
   # Set anchor
   $content_h2
   .each (i, block) ->
@@ -105,19 +105,13 @@ $().ready ->
   $title_container = $('.main.title .container .segment')
   $content_h1.addClass('ui header').appendTo($title_container.eq 0)
 
-  
-  
   $.getJSON '/modules.json', (data) ->
     # Render sitemap
-    React.render <Sitemap data={data.by_name} />, $('.sitemap').get(0)
-    # Render commands
-    name = /\/module\/(.*?)(\.html|\/*)$/.exec(window.location.pathname)?[1]
-    return unless name
-    React.render <Commands commands={data.commands} name={name} />, $('.commands').get(0)
+    React.render <Sitemap data={data} />, $('.sitemap').get(0)
 
   $search = $('.ui.search')
   $search_items = $('.sitemap div.item')
-  
+
   search_items = []
   $search_items.children('.header')
   .each (i, block) -> search_items.push

@@ -6,12 +6,13 @@ projects are tightly coupled and are developed conjointly. Instructions include
 how to download the source code of each project and how to wire them from
 your own project (eg "ryba-cluster").
 
-This page assumes you have read and understand the [Getting Started][gs]
-instructions.
+
 
 ## Preparation
 
-Git, Node.js and NPM must be correctly installed on your host.
+Git, Node.js and NPM must be correctly installed on your host. This page assumes you have
+read and understand the [Getting Started][gs] instructions wich introduce and setup a
+testing environment.
 
 This example install each package inside the same "ryba" package present in your
 home directory. You could should to place each package in any location. We use
@@ -51,7 +52,7 @@ npm link
 
 [ryba-cluster](http://github.com/ryba-io/ryba.git) is the preconfigured
 installation of ryba with 6 nodes. It targets a development host with 16GB of
-memory and 6 virtuan machines managed with Vagrant.
+memory and 6 virtual machines managed with Vagrant.
 
 ```
 git clone https://github.com/ryba-io/ryba-cluster
