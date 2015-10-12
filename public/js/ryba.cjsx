@@ -1,13 +1,14 @@
 
+require '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css'
 require('./ryba.styl')
 require('./home.styl')
-require 'semantic-ui/dist/semantic.css'
-require('semantic-ui/src/definitions/behaviors/visibility.js')
-require('semantic-ui/src/definitions/modules/dropdown.js')
-require('semantic-ui/src/definitions/modules/search.js')
-require('semantic-ui/src/definitions/modules/sidebar.js')
-require('semantic-ui/src/definitions/modules/sticky.js')
-require('semantic-ui/src/definitions/modules/transition.js')
+# require 'semantic-ui/dist/semantic.css'
+# require('semantic-ui/src/definitions/behaviors/visibility.js')
+# require('semantic-ui/src/definitions/modules/dropdown.js')
+# require('semantic-ui/src/definitions/modules/search.js')
+# require('semantic-ui/src/definitions/modules/sidebar.js')
+# require('semantic-ui/src/definitions/modules/sticky.js')
+# require('semantic-ui/src/definitions/modules/transition.js')
 
 $ = require('jquery')
 React = require('react')
@@ -22,6 +23,7 @@ if module.hot
     console.log 'hot swap 7'
 
 $().ready ->
+
   $content = $('.main.content.container')
   $content_h1 = $content.children('h1')
   $content_h2 = $('h2')
@@ -57,6 +59,19 @@ $().ready ->
       pushing: true
     $sticky.sticky 'refresh'
 
+  # Resize header on scroll
+  $(window).scroll (e) ->
+    ph = $('#header .intro p').outerHeight(true)
+    wt = $(window).scrollTop()
+    top = if wt / 2 > ph then (Math.max ph, ph - wt / 2) else wt / 2
+    ltop = -10 # Origin top value for logo img
+    $('#header')
+    .css 'top', - top
+    $('#header .logo img')
+    .width("#{Math.ceil 100 - 50 * top / ph}%")
+    .css 'top', Math.floor ltop + top * (ltop - 45) / (0 - ph)
+    # y = xmin + x * (xmin - xmax)/ (ymin - ymax)
+
   menu_toggle = ->
     $section = $(@)
     $follow_menu = $('#content .following.menu')
@@ -89,18 +104,6 @@ $().ready ->
   $('.label.code').click ->
     $(@).next().toggle()
 
-  # Resize header on scroll
-  $( window ).scroll (e) ->
-    ph = $('#header .item.intro p').outerHeight(true)
-    wt = $(window).scrollTop()
-    top = if wt / 2 > ph then (Math.max ph, ph - wt / 2) else wt / 2
-    ltop = -50 # Origin top value for logo img
-    $('#header')
-    .css 'top', - top
-    $('#header .logo img')
-    .width("#{Math.ceil 100 - 50 * top / ph}%")
-    .css 'top', Math.floor ltop + top * (ltop - 10) / (0 - ph)
-
   # Move header from markdown to correct node
   $title_container = $('.main.title .container .segment')
   $content_h1.addClass('ui header').appendTo($title_container.eq 0)
@@ -132,5 +135,3 @@ $().ready ->
     #   'title', 'description'
     # ]
     # searchFullText: false
-
-# y = xmin + x * (xmin - xmax)/ (ymin - ymax)

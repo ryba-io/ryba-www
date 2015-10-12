@@ -25,6 +25,7 @@
     "npm": "1.4.x"
   },
   "dependencies": {
+    "@salesforce-ux/design-system": "^0.9.2",
     "body-parser": "~1.12.2",
     "cheerio": "0.19.0",
     "coffee-jsx-loader": "^0.1.0",
