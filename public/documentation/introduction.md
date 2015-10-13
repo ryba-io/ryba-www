@@ -1,3 +1,5 @@
+# Quick Start
+
 ## Ryba
 
 Ryba boostraps and manages a full secured Hadoop cluster with one command. This

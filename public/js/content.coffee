@@ -1,10 +1,11 @@
 
-$ = require('jquery')
+$ = require 'jquery'
 require 'highlight.js/styles/default.css'
 require 'highlight.js/styles/github.css'
 hljs = require 'highlight.js'
-require('semantic-ui/src/definitions/modules/accordion.js')
-require('./content.styl')
+require '../assets/accordion.js'
+require '../assets/accordion.css'
+require './content.styl'
 
 $ ->
   $content = $('.main.content.container')
@@ -22,4 +23,4 @@ $ ->
   .children('code')
   .each (i, block) ->
     hljs.highlightBlock block
-    $(@).closest('.ui.accordion').accordion()
+    $(@).closest('.ui.styled.fluid.accordion').accordion()
