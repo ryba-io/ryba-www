@@ -79,7 +79,6 @@
     "react": "^0.13.1",
     "remarkable": "^1.6.0",
     "ryba": "0.0.5",
-    "semantic-ui": "^1.11.6",
     "serve-favicon": "2.2.0",
     "serve-index": "1.6.3",
     "serve-static": "1.9.2",

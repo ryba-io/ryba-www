@@ -3,8 +3,8 @@ $ = require 'jquery'
 require 'highlight.js/styles/default.css'
 require 'highlight.js/styles/github.css'
 hljs = require 'highlight.js'
-require '../assets/accordion.js'
-require '../assets/accordion.css'
+require '../assets/semantic/accordion.min.js'
+require '../assets/semantic/accordion.min.css'
 require './content.styl'
 
 $ ->
