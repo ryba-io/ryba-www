@@ -2,48 +2,42 @@
 extends ./layout.jade
 
 block content
-  h1 
-    |Ryba modules
-  //- div.ui.list.module-list
-  //-   each module in modules
-  //-     .ui.item.module
-  //-       .ui.content
-  //-         if module.logo
-  //-           img(src=module.logo)
-  //-         h2.ui.header=module.name
-  //-       each mod in module.submodules
-  //-         if mod.name
-  //-           .item
-  //-             i.right.triangle.icon
-  //-             .content
-  //-               a.header(href=mod.href)
-  //-                 !=mod.title
-  //-               if mod.description
-  //-                 .description
-  //-                   !=mod.description
-  //- 
-  div.ui.grid.module-list
-    each module in modules
-      .ui.seven.wide.column.module
-        .ui.content.module-header
-          if module.logo
-            img(src=module.logo)
-          h2.ui.header=module.name
-            if module.status=="stable"
-              i.icon.checkmark
-            if module.status=="preview"
-              i.icon.warning
-            if module.status=="broken"
-              i.icon.remove
-        .ui.list
-          if module.submodules
-            each mod in module.submodules
-              if mod.name
-              .item
-                //- i.right.triangle.icon
-                .content
-                  a.header(href=mod.href)
-                    !=mod.title
-                  //- if mod.description
-                  //-   .description
-                  //-     !=mod.description
+  h1.slds-text-heading--large Ryba modules
+  div.module-list.slds-grid.slds-wrap
+    each module, index in modules
+      div(class='module slds-col--padded slds-size--' + (index%2 + 1) + '-of-2')
+        .slds-media.slds-media--responsive
+          .slds-media__figure
+            if module.logo
+              img(src=module.logo)
+          .slds-media__body
+            h2.slds-text-heading--medium=module.name
+            ul.slds-list
+              if module.submodules
+                each mod in module.submodules
+                  if mod.name
+                    li
+                      a.slds-text-heading--small.mod-name(href=mod.href)=mod.title
+                      if mod.description
+                        .description
+                          !=mod.description
+        //- .module-header
+        //-   if module.logo
+        //-     img(src=module.logo)
+        //-   h2.slds-text-heading--medium=module.name
+        //-     //- if module.status=="stable"
+        //-     //-   i.icon.checkmark
+        //-     //- if module.status=="preview"
+        //-     //-   i.icon.warning
+        //-     //- if module.status=="broken"
+        //-     //-   i.icon.remove
+        //- ul.slds-list
+        //-   if module.submodules
+        //-     each mod in module.submodules
+        //-       if mod.name
+        //-       li
+        //-         //- i.right.triangle.icon
+        //-         a.slds-text-heading--small(href=mod.href)=mod.title
+        //-           //- if mod.description
+        //-           //-   .description
+        //-           //-     !=mod.description
