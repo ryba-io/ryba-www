@@ -36,3 +36,5 @@ $ ->
         start()
       start()
   $commands_a.first().trigger 'click'
+  if window.location.pathname == '/'
+    $('.main.title').css 'padding-top', '0'

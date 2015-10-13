@@ -2,7 +2,7 @@
 
 Ryba boostraps and manages a full secured Hadoop cluster with one command. This
 is an [Open-source software (OSS) project][oss] released under the
-[new BSD license][license] developed for one of the World's largest utility
+[new BSD license][license] developed for one of the world's largest utility
 company. It is now operationnal.
 
 ## Motivations
