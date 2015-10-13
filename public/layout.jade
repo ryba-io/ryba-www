@@ -25,16 +25,16 @@ html
         .slds-list.header-text.intro
           p.slds-text-align--center
             | Ryba - deploy multi-tenant Hadoop Clusters
-          ul.slds-list--horizontal.links
-            li.slds-list__item
+          .slds-grid.sdls-grid--align-space.links
+            .slds-col
               a(href="/documentation")
                 | Documentation
                 //- i.student.icon
-            li.slds-list__item
+            .slds-col
               a(href="/modules")
                 | Modules
                 //- i.list.icon
-            li.slds-list__item
+            .slds-col
               a(href="https://github.com/ryba-io/ryba")
                 | Source Code
                 //- i.github.icon
@@ -52,28 +52,34 @@ html
             //-       .commands
         .main.content.container
           block content
-      .ui.inverted.black.footer.vertical.segment
+      .footer
         .container
-          .ui.stackable.inverted.divided.relaxed.grid
-            .four.wide.column
+          .slds-grid
+            .slds-col--padded.slds-size--1-of-4
               //- h4.ui.teal.inverted.header Getting Started
-              h4.ui.teal.inverted.header Quick Navigation
-              .ui.inverted.link.list
+              h4.slds-text-heading--small Quick Navigation
+              ul.slds-list.link
                 //- a.item(href="#") 15 minutes introduction
-                a.item(href="/documentation/introduction") What is Ryba
-                a.item(href="/documentation/getting_started") Getting Started
-                a.item(href="/modules") Modules
+                li
+                  a.item(href="/documentation/introduction") What is Ryba
+                li
+                  a.item(href="/documentation/getting_started") Getting Started
+                li
+                  a.item(href="/modules") Modules
                 //- a.item(href="#") Developement Environnemt
                 //- a.item(href="#") Become a power user
-            .four.wide.column
-              h4.ui.teal.inverted.header Contribute
-              .ui.inverted.link.list
-                a.item(href="https://github.com/ryba-io/") GitHub
-                a.item(href="https://github.com/ryba-io/ryba/issues") Issue Tracker
-                a.item(href="https://github.com/ryba-io/ryba/blob/master/LICENSE.md") License
+            .slds-col--padded.slds-size--1-of-4
+              h4.slds-text-heading--small Contribute
+              ul.slds-list.link
+                li
+                  a.item(href="https://github.com/ryba-io/") GitHub
+                li
+                  a.item(href="https://github.com/ryba-io/ryba/issues") Issue Tracker
+                li
+                  a.item(href="https://github.com/ryba-io/ryba/blob/master/LICENSE.md") License
                 //- a.item(href="#") Contact
-            .eight.wide.column
-              h3.ui.inverted.header Suggestions, problems, feedback?
+            .slds-col--padded.slds-size--2-of-4
+              h3.slds-text-heading--small Suggestions, problems, feedback?
               p
               | Deploying Hadoop in a secured multi-tenant mode take a lot of
               | energy. Support this community effort with your contribution.
