@@ -3,24 +3,25 @@ $ = require 'jquery'
 require 'highlight.js/styles/default.css'
 require 'highlight.js/styles/github.css'
 hljs = require 'highlight.js'
-require '../assets/semantic/accordion.min.js'
-require '../assets/semantic/accordion.min.css'
+require 'jquery-ui/accordion'
 require './content.styl'
 
 $ ->
-  $content = $('.main.content.container')
+  $content = $ '.main.content.container'
   # Highlight code example, with a language specific class
-  $content.find('pre code[class^="language-"]')
+  $content.find 'pre code[class^="language-"]'
   .each (i, block) ->
     hljs.highlightBlock block
   # Highlight ryba code, without a language specific class
-  # Add "active" class to $('.title') and $('.content') to open the accordion
-  $content.find('pre code:not([class]), pre code[class=""]')
+  # Wrap code in collapsible accordion and close it
+  $content.find 'pre code:not([class]), pre code[class=""]'
   .parent()
-  .wrap( "<div class='ui styled fluid accordion'></div>" )
-  .before('<div class="title"><i class="dropdown icon"></i>Show Source Code</div>')
-  .wrap( "<div class='content'></div>" )
-  .children('code')
+  .wrap '<div class="accordion"></div>'
+  .before '<div class="title"><i class="dropdown icon"></i>Show Source Code</div>'
+  .wrap '<div class="content"></div>'
+  .children 'code'
   .each (i, block) ->
     hljs.highlightBlock block
-    $(@).closest('.ui.styled.fluid.accordion').accordion()
+    $(@).closest('.accordion').accordion
+      collapsible: true
+      active: -100

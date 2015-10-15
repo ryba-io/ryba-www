@@ -2,13 +2,6 @@
 require '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css'
 require('./ryba.styl')
 require('./home.styl')
-# require 'semantic-ui/dist/semantic.css'
-# require('semantic-ui/src/definitions/behaviors/visibility.js')
-# require('semantic-ui/src/definitions/modules/dropdown.js')
-# require('semantic-ui/src/definitions/modules/search.js')
-# require('semantic-ui/src/definitions/modules/sidebar.js')
-# require('semantic-ui/src/definitions/modules/sticky.js')
-# require('semantic-ui/src/definitions/modules/transition.js')
 
 $ = require('jquery')
 React = require('react')
@@ -40,8 +33,8 @@ $().ready ->
   # Style tables
   $content.find('table').addClass 'ui striped table'
 
-  title = $content_h1.text()
-  sections = []
+  # title = $content_h1.text()
+  # sections = []
   # $content_h2
   # .each (i, block) ->
   #   text = $(@).text()
@@ -124,7 +117,7 @@ $().ready ->
 
   $.getJSON '/modules.json', (data) ->
     # Render sitemap
-#    React.render <Sitemap data={data} />, $('.sitemap').get(0)
+  #  React.render <Sitemap data={data} />, $('.sitemap').get(0)
 
   # $search = $('.ui.search')
   # $search_items = $('.sitemap div.item')
