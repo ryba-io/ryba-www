@@ -18,35 +18,34 @@ html
     #launch.ui.attached.right.black.fixed.button
       i.content.icon
       span.text Menu
-    #header.ui.top.fixed.inverted.main.borderless.menu
-      div
-        .header.container
-          a.logo(href="/")
-            img(src='/img/logo.png')
-          .item.intro
-            p Ryba - deploy multi-tenant Hadoop Clusters
+    #header.ui.top.fixed.inverted.borderless.menu
+      .header.container
+        a.logo(href="/")
+          img(src='/img/logo.png')
+        .intro
+          p Ryba - deploy multi-tenant Hadoop Clusters
+          div
             a.ui.label.large(href="/documentation")
               i.student.icon
               | Documentation
-            a.ui.label.large(href="/modules")
+            a.ui.black.label.large(href="/modules")
               i.list.icon
               | Modules
-            a.ui.label.large(href="https://github.com/ryba-io/ryba")
+            a.ui.black.label.large(href="https://github.com/ryba-io/ryba")
               i.github.icon
               | Source Code
     #content.pusher
       .full.height
         block home_anim
-        .segment.ryba.main.title
+        .ryba.title
           .container
-            .ui.horizontal.segment
             //- .ui.sixteen.wide.column.grid
             //-   .ten.wide.column
             //-     .ui.horizontal.segment.ryba.title
             //-   .six.wide.column
             //-     .ui.horizontal.segment
             //-       .commands
-        .main.content.container
+        .ryba.container.content
           block content
       .ui.inverted.black.footer.vertical.segment
         .container

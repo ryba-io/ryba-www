@@ -1,6 +1,12 @@
 
 html, body
   font-size 13px
+  background #ccc
+
+  
+body.pushable > #content.pusher {
+  background: #F7F7F7;
+}
 
 #launch.right.button
   height auto
@@ -28,20 +34,22 @@ html, body
 #header
   transition height 2s
   // height 100px
-  background-color rgba(0,0,0,0.85)
+  background-color rgba(0,0,0,0.80)
   .container
     margin .2rem auto
     .logo
       position relative
       display inline-block
       width 20%
-      // box-sizing border-box
       img
         max-width 100%
-        // display block
-        top -50px
+        top 0
         position absolute
+    p
+      color: white
+      margin .8rem 0
     .intro
+      position relative
       width 80%
       text-align center
   &.small

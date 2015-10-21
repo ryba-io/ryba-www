@@ -7,7 +7,7 @@ require('semantic-ui/src/definitions/modules/accordion.js')
 require('./content.styl')
 
 $ ->
-  $content = $('.main.content.container')
+  $content = $('.ryba.content.container')
   # Highlight code example, with a language specific class
   $content.find('pre code[class^="language-"]')
   .each (i, block) ->

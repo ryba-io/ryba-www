@@ -1,13 +1,14 @@
 
 require('./ryba.styl')
 require('./home.styl')
+# require 'semantic-ui/dist/themes/default/assets/fonts/icons.woff2'
 require 'semantic-ui/dist/semantic.css'
-require('semantic-ui/src/definitions/behaviors/visibility.js')
-require('semantic-ui/src/definitions/modules/dropdown.js')
-require('semantic-ui/src/definitions/modules/search.js')
-require('semantic-ui/src/definitions/modules/sidebar.js')
-require('semantic-ui/src/definitions/modules/sticky.js')
-require('semantic-ui/src/definitions/modules/transition.js')
+require 'semantic-ui/src/definitions/behaviors/visibility.js'
+require 'semantic-ui/src/definitions/modules/dropdown.js'
+require 'semantic-ui/src/definitions/modules/search.js'
+require 'semantic-ui/src/definitions/modules/sidebar.js'
+require 'semantic-ui/src/definitions/modules/sticky.js'
+require 'semantic-ui/src/definitions/modules/transition.js'
 
 $ = require('jquery')
 React = require('react')
@@ -22,7 +23,7 @@ if module.hot
     console.log 'hot swap 7'
 
 $().ready ->
-  $content = $('.main.content.container')
+  $content = $('.ryba.content.container')
   $content_h1 = $content.children('h1')
   $content_h2 = $('h2')
 
@@ -90,19 +91,21 @@ $().ready ->
     $(@).next().toggle()
 
   # Resize header on scroll
-  $( window ).scroll (e) ->
-    ph = $('#header .item.intro p').outerHeight(true)
+  layout_header = ->
+    ph = $('#header .intro p').outerHeight(true)
+    totalheight = $('#header').outerHeight(false)
     wt = $(window).scrollTop()
     top = if wt / 2 > ph then (Math.max ph, ph - wt / 2) else wt / 2
-    ltop = -50 # Origin top value for logo img
     $('#header')
     .css 'top', - top
     $('#header .logo img')
-    .width("#{Math.ceil 100 - 50 * top / ph}%")
-    .css 'top', Math.floor ltop + top * (ltop - 10) / (0 - ph)
+    .height("#{Math.ceil totalheight - top}px")
+    .css 'top', top + 10 * (ph - top) / ph
+  $( window ).scroll layout_header
+  layout_header()
 
   # Move header from markdown to correct node
-  $title_container = $('.main.title .container .segment')
+  $title_container = $('.ryba.title .container')
   $content_h1.addClass('ui header').appendTo($title_container.eq 0)
 
   $.getJSON '/modules.json', (data) ->
