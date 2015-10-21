@@ -6,8 +6,6 @@ projects are tightly coupled and are developed conjointly. Instructions include
 how to download the source code of each project and how to wire them from
 your own project (eg "ryba-cluster").
 
-
-
 ## Preparation
 
 Git, Node.js and NPM must be correctly installed on your host. This page assumes you have

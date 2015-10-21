@@ -78,21 +78,20 @@ app.get '/command/:command.json', (req, res, next) ->
 app.get '/documentation',  (req, res)  ->
   res.render 'documentation/index.jade', title: 'Getting Started'
 
-app.get '/documentation/:page', (req, res, next) ->
-  filename = req.params.page.split('/').slice(0)
-  title = "#{filename}"
-  title = "#{title.charAt(0).toUpperCase()}#{title.slice 1}"
-  filename = "#{filename}.md"
-  filename = "#{path.join __dirname, '/../public/documentation/',filename}"
+app.get '/documentation/**', (req, res, next) ->
+  return next() if /\./.test path.basename req.url
+  filename = req.url
+  filename = filename.substr 0, filename.length - 1 if /\/$/.test filename
+  # title = "#{filename}"
+  # title = "#{title.charAt(0).toUpperCase()}#{title.slice 1}"
+  filename = "#{path.join __dirname, '/../public/',filename}.md"
   fs.readFile filename, 'utf8', (err, content) ->
     return next err if err
     try
       html = md.render content
-      res.render 'documentation/documentation.jade',  title: "#{title} - Ryba's Documentation", srcmd: html
+      res.render 'documentation/documentation.jade',  title: "Ryba's Documentation", srcmd: html
     catch err
       fn err
-    return
-  return
 
 app.use serve_static path.resolve __dirname, '../public'
 app.use serve_index path.resolve __dirname, '../public'
