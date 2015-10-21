@@ -1,15 +1,15 @@
 
 require '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css'
-require('./ryba.styl')
-require('./home.styl')
+require './ryba.styl'
+require './home.styl'
 
-$ = require('jquery')
-React = require('react')
-# Commands = require('./Commands.cjsx')
-Sitemap = require('./Sitemap.cjsx')
-Toc = require('./Toc.cjsx')
-require('./content.coffee')
-require('./home.coffee')
+$ = require 'jquery'
+React = require 'react'
+# Commands = require './Commands.cjsx'
+Sitemap = require './Sitemap.cjsx'
+Toc = require './Toc.cjsx'
+require './content.coffee'
+require './home.coffee'
 
 if module.hot
   module.hot.accept ->
@@ -33,24 +33,24 @@ $().ready ->
   # Style tables
   $content.find('table').addClass 'ui striped table'
 
-  # title = $content_h1.text()
-  # sections = []
-  # $content_h2
-  # .each (i, block) ->
-  #   text = $(@).text()
-  #   anchor = text.replace(/\s+/g, '-').toLowerCase()
-  #   sections.push anchor: anchor, title: text
-  # unless $content_h1.hasClass 'no_toc'
-  #   React.render <Toc title={title} sections={sections} />, $content.prepend('<div/>').children().get(0)
-  #   $content.prepend $content.children().first().children().first()
-  #   $sticky = $('.ui.sticky')
-  #   $sticky.sticky
-  #     # context: '#content .ui.page'
-  #     context: $content
-  #     offset: 50 # When in fixed position, the margin-top style
-  #     # bottomOffset: 0
-  #     pushing: true
-  #   $sticky.sticky 'refresh'
+  title = $content_h1.text()
+  sections = []
+  $content_h2
+  .each (i, block) ->
+    text = $(@).text()
+    anchor = text.replace(/\s+/g, '-').toLowerCase()
+    sections.push anchor: anchor, title: text
+  unless $content_h1.hasClass 'no_toc'
+    React.render <Toc title={title} sections={sections} />, $content.prepend('<div/>').children().get(0)
+    $content.prepend $content.children().first().children().first()
+    # $sticky = $('.toc.sticky')
+    # $sticky.sticky
+    #   # context: '#content .ui.page'
+    #   context: $content
+    #   offset: 50 # When in fixed position, the margin-top style
+    #   # bottomOffset: 0
+    #   pushing: true
+    # $sticky.sticky 'refresh'
 
   # Resize header on scroll
   $(window).scroll (e) ->

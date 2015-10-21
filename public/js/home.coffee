@@ -1,7 +1,7 @@
 
 $ = require 'jquery'
-require 'nanoscroller/bin/css/nanoscroller.css'
-nanoscroller = require 'nanoscroller/bin/javascripts/jquery.nanoscroller.js'
+# require 'nanoscroller/bin/css/nanoscroller.css'
+# nanoscroller = require 'nanoscroller/bin/javascripts/jquery.nanoscroller.js'
 
 $ ->
   $anim = $('.anim')

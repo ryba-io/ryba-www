@@ -2,7 +2,7 @@
 extends ./layout.jade
 
 block content
-  h1.slds-text-heading--large Ryba modules
+  h1.header.slds-text-heading--large Ryba modules
   div.module-list.slds-grid.slds-wrap
     each module, index in modules
       div(class='module slds-col--padded slds-size--' + (index%2 + 1) + '-of-2')
