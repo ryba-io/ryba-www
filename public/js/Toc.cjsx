@@ -19,7 +19,7 @@ Commands = React.createClass
       </ul>
     </div>
 
-
+module.exports = Commands
 
 # <div className="ui close right rail">
 #   <div className="ui sticky fixed top">
@@ -33,6 +33,3 @@ Commands = React.createClass
 #     </div>
 #   </div>
 # </div>
-
-
-module.exports = Commands
