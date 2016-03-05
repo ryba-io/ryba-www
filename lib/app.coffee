@@ -18,7 +18,6 @@ bodyParser = require 'body-parser'
 cookieParser = require 'cookie-parser'
 methodOverride = require 'method-override'
 session = require 'express-session'
-errorhandler = require 'errorhandler'
 serve_index = require 'serve-index'
 serve_static = require 'serve-static'
 jade_static = require 'connect-jade-static'
@@ -94,9 +93,6 @@ app.get '/documentation/**', (req, res, next) ->
 
 app.use serve_static path.resolve __dirname, '../public'
 app.use serve_index path.resolve __dirname, '../public'
-
-# if process.env.NODE_ENV is 'development'
-#   app.use errorhandler()
 
 app.use (err, req, res, next) ->
   console.log 'error', err.code, err
