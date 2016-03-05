@@ -102,5 +102,6 @@ app.use (err, req, res, next) ->
   res.status(code).render 'error.jade', error: err
   res.status(code).json err
 
-server.listen params.port, console.log 'running on port ' + params.port
+server.listen params.port
+console.log 'running on port ' + params.port
 module.exports = server
