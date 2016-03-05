@@ -11,7 +11,7 @@ module.exports = (app) ->
     output:
       # publicPath: 'http://localhost:8080/'
       path: __dirname + '/../public/build'
-      publicPath: '/'
+      publicPath: '/' # required for woff2 link resolution
       filename: 'bundle.js'
     plugins: [
       # new webpack.HotModuleReplacementPlugin()
