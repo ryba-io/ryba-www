@@ -70,6 +70,8 @@
   },
   "main": "lib/app.coffee",
   "scripts": {
+    "semantic": "cd semantic && ../node_modules/.bin/gulp build",
+    "//": "Following scripts arent used anymore but kept for argument documentation for now.",
     "build_assets": "node_modules/.bin/webpack -p --config webpack.config.js",
     "dev_app": "export RYBA_DEV=1; ./bin/app -p 3000",
     "dev_assets": "node_modules/.bin/webpack-dev-server --devtool eval --hot --progress --colors --content-base build --public-path http://localhost:8080/",
