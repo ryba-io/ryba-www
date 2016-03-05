@@ -19,7 +19,6 @@ cookieParser = require 'cookie-parser'
 methodOverride = require 'method-override'
 session = require 'express-session'
 errorhandler = require 'errorhandler'
-serve_favicon = require 'serve-favicon'
 serve_index = require 'serve-index'
 serve_static = require 'serve-static'
 jade_static = require 'connect-jade-static'
@@ -38,6 +37,7 @@ app.use bodyParser.urlencoded()
 app.use cookieParser 'my secret'
 app.use methodOverride '_method'
 app.use session secret: 'my secret', resave: true, saveUninitialized: true
+app.use favicon __dirname + '/../public/favicomatic/favicon.ico'
 
 modules = require './modules'
 app.use modules
