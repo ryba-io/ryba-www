@@ -62,11 +62,11 @@ app.get '/modules', (req, res) ->
   res.render 'modules.jade', modules: req.modules.full
 
 app.get '/modules.json', (req, res) ->
-  res.json req.modules.full
+  res.json req.modules.by_name
 
-app.get /module\/.*/, (req, res, next) ->
-  filename = req.url.split('/').slice(2).join('/')
-  module = req.modules.by_filename[filename]
+app.get /^\/module\/.*/, (req, res, next) ->
+  name = req.url.split('/').slice(2).join('/')
+  module = req.modules.by_name[name]
   res.render 'module.jade', title : module.title, srcmd: module.html
 
 app.get '/command/:command.json', (req, res, next) ->

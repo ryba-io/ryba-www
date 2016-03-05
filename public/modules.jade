@@ -2,48 +2,296 @@
 extends ./layout.jade
 
 block content
-  h1 
+  h1
     |Ryba modules
-  //- div.ui.list.module-list
-  //-   each module in modules
-  //-     .ui.item.module
-  //-       .ui.content
-  //-         if module.logo
-  //-           img(src=module.logo)
-  //-         h2.ui.header=module.name
-  //-       each mod in module.submodules
-  //-         if mod.name
-  //-           .item
-  //-             i.right.triangle.icon
-  //-             .content
-  //-               a.header(href=mod.href)
-  //-                 !=mod.title
-  //-               if mod.description
-  //-                 .description
-  //-                   !=mod.description
-  //- 
-  div.ui.grid.module-list
-    each module in modules
-      .ui.seven.wide.column.module
-        .ui.content.module-header
-          if module.logo
-            img(src=module.logo)
-          h2.ui.header=module.name
-            if module.status=="stable"
-              i.icon.checkmark
-            if module.status=="preview"
-              i.icon.warning
-            if module.status=="broken"
-              i.icon.remove
-        .ui.list
-          if module.submodules
-            each mod in module.submodules
-              if mod.name
-              .item
-                //- i.right.triangle.icon
-                .content
-                  a.header(href=mod.href)
-                    !=mod.title
-                  //- if mod.description
-                  //-   .description
-                  //-     !=mod.description
+  .ui.four.doubling.cards
+    .card
+      .image
+        img(src="/img/module/hadoop-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Hadoop &amp; HDFS
+        hr
+        p
+          a(href="/module/ryba/hadoop/core") Hadoop Core
+        p
+          a(href="/module/ryba/hadoop/hdfs_client") HDFS Client
+        p
+          a(href="/module/ryba/hadoop/hdfs_nn") HFDS NameNode
+        p
+          a(href="/module/ryba/hadoop/hdfs_dn") HFDS Datanode
+        p
+          a(href="/module/ryba/hadoop/zkfc") ZKFC
+        p
+          a(href="/module/ryba/hadoop/httpfs") HTTPFS
+    .card
+      .image
+        img(src="/img/module/hadoop-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header YARN
+        hr
+        p
+          a(href="/module/ryba/hadoop/yarn_client") Client
+        p
+          a(href="/module/ryba/hadoop/yarn_ts") TimeLine Server
+        p
+          a(href="/module/ryba/hadoop/yarn_rm") ResourceManager
+        p
+          a(href="/module/ryba/hadoop/yarn_nm") NodeManager
+    .card
+      .image
+        img(src="/img/module/zookeeper-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header ZooKeeper
+        hr
+        p
+          a(href="/module/ryba/zookeeper/client") Client
+        p
+          a(href="/module/ryba/zookeeper/server") Server
+    .card
+      .image
+        img(src="/img/module/oozie-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Oozie
+        hr
+        p
+          a(href="/module/ryba/oozie/client") Oozie Client
+        p
+          a(href="/module/ryba/oozie/server") Oozie Server
+    .card
+      .image
+        img(src="/img/module/oozie-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Hue
+        hr
+        p
+          a(href="/module/ryba/hue") Hue HDP
+        p
+          a(href="/module/ryba/huedocker") Hue Latest
+    .card
+      .image
+        img(src="/img/module/ambari-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Ambari
+        hr
+        p
+          a(href="/module/ryba/ambari/server") Ambari Server
+        p
+          a(href="/module/ryba/ambari/agent") Ambari Agent
+    .card
+      .image
+        img(src="/img/module/hbase-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header HBase
+        hr
+        p
+          a(href="/module/ryba/hbase/client") HBase Client
+        p
+          a(href="/module/ryba/hbase/master") HBase Master
+        p
+          a(href="/module/ryba/hbase/regionserver") HBase RegionServer
+        p
+          a(href="/module/ryba/hbase/rest") HBase Rest
+        p
+          a(href="/module/ryba/hbase/thrift") HBase Thrift
+    .card
+      .image
+        img(src="/img/module/hadoop-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header MapReduce
+        hr
+        p
+          a(href="/module/ryba/hadoop/mapred_client") MapReduce Client
+        p
+          a(href="/module/ryba/hadoop/mapred_jhs") JobHistory Server
+    .card
+      .image
+        img(src="/img/module/hive-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Hive
+        hr
+        p
+          a(href="/module/ryba/hive/client") Hive Client
+        p
+          a(href="/module/ryba/hive/hcatalog") Metastore / HCatalog
+        p
+          a(href="/module/ryba/hive/server2") Hive Server2
+        p
+          a(href="/module/ryba/hive/webhcat") WebHCat
+    .card
+      .image
+        img(src="/img/module/spark-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Spark
+        hr
+        p
+          a(href="/module/ryba/spark/client") Spark Client
+        p
+          a(href="/module/ryba/spark/history_server") History Server
+    .card
+      .image
+        img(src="/img/module/kafka-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Kafka
+        hr
+        p
+          a(href="/module/ryba/kafka/broker") Kafka Broker
+        p
+          a(href="/module/ryba/kafka/consumer") Kafka Consumer
+        p
+          a(href="/module/ryba/kafka/producer") Kafka Producer
+    .card
+      .image
+        img(src="/img/module/tez-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/tez") Tez
+    .card
+      .image
+        img(src="/img/module/phoenix-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Phoenix
+        hr
+        p
+          a(href="/module/ryba/phoenix/broker") Phoenix Client
+        p
+          a(href="/module/ryba/phoenix/master") Phoenix Master
+        p
+          a(href="/module/ryba/phoenix/regionserver") Phoenix RegionServer
+    .card
+      .image
+        img(src="/img/module/titan-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/titan") Titan
+    .card
+      .image
+        img(src="/img/module/mahout-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/mahout") Mahout
+    .card
+      .image
+        img(src="/img/module/flume-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/flume") Flume
+    .card
+      .image
+        img(src="/img/module/pig-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/pig") Pig
+    .card
+      .image
+        img(src="/img/module/sqoop-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/sqoop") Sqoop
+    .card
+      .image
+        img(src="/img/module/falcon-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/falcon") Falcon
+    .card
+      .image
+        img(src="/img/module/zeppelin-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/zeppelin") Zeppelin
+    .card
+      .image
+        img(src="/img/module/knox-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/knox") Knox
+    .card
+      .image
+        img(src="/img/module/solr-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/solr") Solr
+    .card
+      .image
+        img(src="/img/module/elasticsearch-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/elasticsearch") Elastic Search
+    .card
+      .image
+        img(src="/img/module/mongodb-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header MongoDB
+        hr
+        p
+          a(href="/module/ryba/mongodb/client") MongoDB Client
+        p
+          a(href="/module/ryba/mongodb/configsrv") MongoDB Config Server
+        p
+          a(href="/module/ryba/mongodb/router") MongoDB Router
+        p
+          a(href="/module/ryba/mongodb/shard") MongoDB Shard
+    .card
+      .image
+        img(src="/img/module/shinken-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header Shinken
+        hr
+        p
+          a(href="/module/ryba/shinken/arbiter") Shinken Arbiter
+        p
+          a(href="/module/ryba/shinken/broker") Shinken Broker
+        p
+          a(href="/module/ryba/shinken/poller") Shinken Poller
+        p
+          a(href="/module/ryba/shinken/reactionner") Shinken Reactionner
+        p
+          a(href="/module/ryba/shinken/receiver") Shinken Receiver
+        p
+          a(href="/module/ryba/shinken/scheduler") Shinken Scheduler
+    .card
+      .image
+        img(src="/img/module/nagios-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/nagios") Nagios
+    .card
+      .image
+        img(src="/img/module/ganglia-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/ganglia") Ganglia
+    .card
+      .image
+        img(src="/img/module/graphite-400.png")
+      .content
+        i.right.floated.checkmark.icon
+        h2.header
+          a(href="/module/ryba/graphite") Graphite
