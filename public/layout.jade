@@ -5,13 +5,7 @@ html
     title Ryba - Multi-Tenant Hadoop deployment
     link(rel='icon', type='image/vnd.microsoft.icon', href='/img/favicon.png')
     link(rel='shortcut icon', type='image/x-icon', href='/img/favicon.png')
-    //- link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf')
-    //- link(rel='stylesheet', type='text/css', href='/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    //- if process.env['RYBA_DEV']
-    //-   script(type='text/javascript', src='http://localhost:8080/webpack-dev-server.js')
-    //-   script(type='text/javascript', src='http://localhost:8080/bundle.js')
-    //- else
     link(rel="apple-touch-icon-precomposed", sizes="57x57", href="/favicomatic/apple-touch-icon-57x57.png")
     link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/favicomatic/apple-touch-icon-114x114.png")
     link(rel="apple-touch-icon-precomposed", sizes="72x72", href="/favicomatic/apple-touch-icon-72x72.png")
@@ -46,7 +40,7 @@ html
         .intro
           p Ryba - deploy multi-tenant Hadoop Clusters
           div
-            a.ui.label.large(href="/documentation")
+            a.ui.black.label.large(href="/documentation")
               i.student.icon
               | Documentation
             a.ui.black.label.large(href="/modules")
@@ -92,7 +86,7 @@ html
               h3.ui.inverted.header Suggestions, problems, feedback?
               p
               | Deploying Hadoop in a secured multi-tenant mode take a lot of
-              | energy. Support this community effort with your contribution.
+              | energy. Support this community effort with your contributions.
               | Review the documentation, test Ryba in multiple environments
               | or sponsor new features.
               //- form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
