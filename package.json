@@ -53,7 +53,7 @@
     "parameters": "0.1.5",
     "react": "~0.13.1",
     "remarkable": "~1.6.0",
-    "ryba": "git+https://github.com/ryba-io/ryba.git#master",
+    "ryba": "git+https://github.com/ryba-io/ryba.git#v0.3.0",
     "semantic-ui": "~2.1.4",
     "serve-favicon": "~2.3.0",
     "serve-index": "~1.7.2",
