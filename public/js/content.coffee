@@ -3,7 +3,7 @@ $ = require('jquery')
 require 'highlight.js/styles/default.css'
 require 'highlight.js/styles/github.css'
 hljs = require 'highlight.js'
-require('semantic-ui/src/definitions/modules/accordion.js')
+require('../semantic/components/accordion.js')
 require('./content.styl')
 
 $ ->

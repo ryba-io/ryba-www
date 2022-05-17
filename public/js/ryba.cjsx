@@ -2,13 +2,13 @@
 require('./ryba.styl')
 require('./home.styl')
 # require 'semantic-ui/dist/themes/default/assets/fonts/icons.woff2'
-require 'semantic-ui/dist/semantic.css'
-require 'semantic-ui/src/definitions/behaviors/visibility.js'
-require 'semantic-ui/src/definitions/modules/dropdown.js'
-require 'semantic-ui/src/definitions/modules/search.js'
-require 'semantic-ui/src/definitions/modules/sidebar.js'
-require 'semantic-ui/src/definitions/modules/sticky.js'
-require 'semantic-ui/src/definitions/modules/transition.js'
+require '../semantic/semantic.css'
+require '../semantic/components/visibility.js'
+require '../semantic/components/dropdown.js'
+require '../semantic/components/search.js'
+require '../semantic/components/sidebar.js'
+require '../semantic/components/sticky.js'
+require '../semantic/components/transition.js'
 
 $ = require('jquery')
 React = require('react')
